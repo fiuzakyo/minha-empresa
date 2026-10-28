@@ -1,0 +1,12 @@
+{
+  "extends": "../shadcn/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/registry/*": ["../shadcn/registry/*"],
+      "@/lib/*": ["../shadcn/registry/futuredata/lib/*"],
+      "@/hooks/*": ["../shadcn/registry/futuredata/hooks/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

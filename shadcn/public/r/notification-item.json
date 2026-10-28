@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "notification-item",
+  "title": "Notification Item",
+  "description": "Figma: Notifications / Item",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme",
+    "@futuredata/button"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/notifications/notification-item.tsx",
+      "content": "/**\n * Notification Item — Voltron Design System (Figma: 02 · Molecules › Notifications / Item)\n *\n * Linha de notificação (shadcn Item): avatar, autor em destaque, mensagem, data, tempo relativo\n * e ponto de não lida. type:\n * - follow   → \"começou a seguir você\"\n * - comment  → trecho do comentário em --muted (fica --card no hover)\n * - reaction → selo de coração --primary sobre o avatar\n * - invite   → alvo em destaque + Recusar / Aceitar\n * Hover → --muted. radius/lg, padding 12, gap 12.\n */\nimport * as React from \"react\"\nimport { HeartIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/futuredata/ui/button\"\n\nfunction NotificationItem({\n  className,\n  type = \"follow\",\n  avatar,\n  actor,\n  message,\n  target,\n  comment,\n  date,\n  time,\n  unread = false,\n  onAccept,\n  onDecline,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"children\"> & {\n  type?: \"follow\" | \"comment\" | \"reaction\" | \"invite\"\n  avatar: React.ReactNode\n  actor: React.ReactNode\n  /** Texto livre da mensagem (ex.: \"comentou no seu documento\"). */\n  message: React.ReactNode\n  /** Alvo em destaque no convite (Figma Target). */\n  target?: React.ReactNode\n  comment?: React.ReactNode\n  date?: React.ReactNode\n  time?: React.ReactNode\n  unread?: boolean\n  onAccept?: () => void\n  onDecline?: () => void\n}) {\n  return (\n    <div\n      role=\"listitem\"\n      data-slot=\"notification-item\"\n      data-type={type}\n      data-unread={unread || undefined}\n      className={cn(\"group/notification flex gap-3 rounded-lg p-3 transition-colors hover:bg-muted\", className)}\n      {...props}\n    >\n      <div className=\"relative size-10 shrink-0\">\n        {avatar}\n        {type === \"reaction\" && (\n          <span className=\"absolute -right-1 -bottom-1 flex size-[18px] items-center justify-center rounded-full bg-primary text-primary-foreground ring-[3px] ring-card\">\n            <HeartIcon weight=\"fill\" className=\"size-3\" aria-label=\"Reação\" />\n          </span>\n        )}\n      </div>\n      <div className=\"flex min-w-0 flex-1 flex-col gap-1\">\n        <div className=\"flex gap-2\">\n          <p className=\"flex-1 text-sm text-foreground\">\n            <span className=\"font-semibold\">{actor}</span> {message}\n            {target && <span className=\"font-semibold\"> {target}</span>}\n          </p>\n          {unread && (\n            <span className=\"flex h-5 items-center\">\n              <span aria-label=\"Não lida\" className=\"size-2 rounded-full bg-primary\" />\n            </span>\n          )}\n        </div>\n        {(date || time) && (\n          <div className=\"flex justify-between text-xs text-muted-foreground\">\n            <span>{date}</span>\n            <span>{time}</span>\n          </div>\n        )}\n        {type === \"comment\" && comment && (\n          <p className=\"mt-1 rounded-md bg-muted p-3 text-sm text-foreground transition-colors group-hover/notification:bg-card\">{comment}</p>\n        )}\n        {type === \"invite\" && (\n          <div className=\"mt-1 flex gap-2\">\n            <Button variant=\"outline\" size=\"sm\" onClick={onDecline}>\n              Recusar\n            </Button>\n            <Button size=\"sm\" onClick={onAccept}>\n              Aceitar\n            </Button>\n          </div>\n        )}\n      </div>\n    </div>\n  )\n}\n\nexport { NotificationItem }\n",
+      "type": "registry:component",
+      "target": "components/notifications/notification-item.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

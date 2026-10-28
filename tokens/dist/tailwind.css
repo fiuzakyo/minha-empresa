@@ -1,0 +1,569 @@
+/* Voltron Design System — tema do Tailwind CSS v4
+ * Gerado automaticamente a partir do Figma. Não edite à mão.
+ *
+ *   @import "tailwindcss";
+ *   @import "@voltron/tokens/voltron.css";
+ *   @import "@voltron/tokens/tailwind.css";
+ */
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  /* cores shadcn/ui: bg-primary, text-muted-foreground, border-input ... */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  /* cores semânticas Voltron: bg-vt-primary-soft, text-vt-text-muted ... */
+  --color-vt-primary-very-soft: var(--vt-primary-very-soft);
+  --color-vt-primary-soft: var(--vt-primary-soft);
+  --color-vt-primary-medium: var(--vt-primary-medium);
+  --color-vt-primary-base: var(--vt-primary-base);
+  --color-vt-primary-emphasis: var(--vt-primary-emphasis);
+  --color-vt-primary-strong: var(--vt-primary-strong);
+  --color-vt-primary-maximum: var(--vt-primary-maximum);
+  --color-vt-primary-foreground: var(--vt-primary-foreground);
+  --color-vt-secondary-very-soft: var(--vt-secondary-very-soft);
+  --color-vt-secondary-soft: var(--vt-secondary-soft);
+  --color-vt-secondary-medium: var(--vt-secondary-medium);
+  --color-vt-secondary-base: var(--vt-secondary-base);
+  --color-vt-secondary-emphasis: var(--vt-secondary-emphasis);
+  --color-vt-secondary-strong: var(--vt-secondary-strong);
+  --color-vt-secondary-maximum: var(--vt-secondary-maximum);
+  --color-vt-secondary-foreground: var(--vt-secondary-foreground);
+  --color-vt-tertiary-very-soft: var(--vt-tertiary-very-soft);
+  --color-vt-tertiary-soft: var(--vt-tertiary-soft);
+  --color-vt-tertiary-medium: var(--vt-tertiary-medium);
+  --color-vt-tertiary-base: var(--vt-tertiary-base);
+  --color-vt-tertiary-emphasis: var(--vt-tertiary-emphasis);
+  --color-vt-tertiary-strong: var(--vt-tertiary-strong);
+  --color-vt-tertiary-maximum: var(--vt-tertiary-maximum);
+  --color-vt-tertiary-foreground: var(--vt-tertiary-foreground);
+  --color-vt-success-very-soft: var(--vt-success-very-soft);
+  --color-vt-success-soft: var(--vt-success-soft);
+  --color-vt-success-medium: var(--vt-success-medium);
+  --color-vt-success-base: var(--vt-success-base);
+  --color-vt-success-emphasis: var(--vt-success-emphasis);
+  --color-vt-success-strong: var(--vt-success-strong);
+  --color-vt-success-maximum: var(--vt-success-maximum);
+  --color-vt-success-foreground: var(--vt-success-foreground);
+  --color-vt-warning-very-soft: var(--vt-warning-very-soft);
+  --color-vt-warning-soft: var(--vt-warning-soft);
+  --color-vt-warning-medium: var(--vt-warning-medium);
+  --color-vt-warning-base: var(--vt-warning-base);
+  --color-vt-warning-emphasis: var(--vt-warning-emphasis);
+  --color-vt-warning-strong: var(--vt-warning-strong);
+  --color-vt-warning-maximum: var(--vt-warning-maximum);
+  --color-vt-warning-foreground: var(--vt-warning-foreground);
+  --color-vt-error-very-soft: var(--vt-error-very-soft);
+  --color-vt-error-soft: var(--vt-error-soft);
+  --color-vt-error-medium: var(--vt-error-medium);
+  --color-vt-error-base: var(--vt-error-base);
+  --color-vt-error-emphasis: var(--vt-error-emphasis);
+  --color-vt-error-strong: var(--vt-error-strong);
+  --color-vt-error-maximum: var(--vt-error-maximum);
+  --color-vt-error-foreground: var(--vt-error-foreground);
+  --color-vt-information-very-soft: var(--vt-information-very-soft);
+  --color-vt-information-soft: var(--vt-information-soft);
+  --color-vt-information-medium: var(--vt-information-medium);
+  --color-vt-information-base: var(--vt-information-base);
+  --color-vt-information-emphasis: var(--vt-information-emphasis);
+  --color-vt-information-strong: var(--vt-information-strong);
+  --color-vt-information-maximum: var(--vt-information-maximum);
+  --color-vt-information-foreground: var(--vt-information-foreground);
+  --color-vt-surface-background: var(--vt-surface-background);
+  --color-vt-surface-elevated: var(--vt-surface-elevated);
+  --color-vt-surface-subtle: var(--vt-surface-subtle);
+  --color-vt-text-primary: var(--vt-text-primary);
+  --color-vt-text-secondary: var(--vt-text-secondary);
+  --color-vt-text-muted: var(--vt-text-muted);
+  --color-vt-text-disabled: var(--vt-text-disabled);
+  --color-vt-text-inverse: var(--vt-text-inverse);
+  --color-vt-border-default: var(--vt-border-default);
+  --color-vt-border-strong: var(--vt-border-strong);
+  --color-vt-border-input: var(--vt-border-input);
+  --color-vt-focus-ring: var(--vt-focus-ring);
+  --color-vt-shadow-neutral-5: var(--vt-shadow-neutral-5);
+  --color-vt-shadow-neutral-10: var(--vt-shadow-neutral-10);
+  --color-vt-shadow-neutral-25: var(--vt-shadow-neutral-25);
+  --color-vt-shadow-brand-10: var(--vt-shadow-brand-10);
+  --color-vt-shadow-brand-20: var(--vt-shadow-brand-20);
+  --color-vt-shadow-brand-40: var(--vt-shadow-brand-40);
+  --color-vt-shadow-error-20: var(--vt-shadow-error-20);
+  --color-vt-shadow-secondary-20: var(--vt-shadow-secondary-20);
+  --color-vt-text-on-media: var(--vt-text-on-media);
+  --color-vt-surface-overlay: var(--vt-surface-overlay);
+  --color-vt-focus-halo: var(--vt-focus-halo);
+
+  /* raios: rounded-button, rounded-input, rounded-card, rounded-lg ... */
+  --radius-none: var(--vt-radius-none);
+  --radius-control: var(--vt-radius-control);
+  --radius-sm: var(--vt-radius-sm);
+  --radius-md: var(--vt-radius-md);
+  --radius-lg: var(--vt-radius-lg);
+  --radius-base: var(--vt-radius-base);
+  --radius-xl: var(--vt-radius-xl);
+  --radius-2xl: var(--vt-radius-2xl);
+  --radius-3xl: var(--vt-radius-3xl);
+  --radius-4xl: var(--vt-radius-4xl);
+  --radius-full: var(--vt-radius-full);
+  --radius-button: var(--vt-radius-button);
+  --radius-alert: var(--vt-radius-alert);
+  --radius-alert-lg: var(--vt-radius-alert-lg);
+  --radius-media: var(--vt-radius-media);
+  --radius-input: var(--vt-radius-input);
+  --radius-card: var(--vt-radius-card);
+
+  /* tipografia: font-display, font-sans, text-sm ... */
+  --font-sans: var(--vt-font-family-text);
+  --font-display: var(--vt-font-family-display);
+  --text-xs: var(--vt-font-size-xs);
+  --text-xs--line-height: var(--vt-line-height-xs);
+  --text-sm: var(--vt-font-size-sm);
+  --text-sm--line-height: var(--vt-line-height-sm);
+  --text-base: var(--vt-font-size-base);
+  --text-base--line-height: var(--vt-line-height-base);
+  --text-lg: var(--vt-font-size-lg);
+  --text-lg--line-height: var(--vt-line-height-lg);
+  --text-xl: var(--vt-font-size-xl);
+  --text-xl--line-height: var(--vt-line-height-xl);
+  --text-2xl: var(--vt-font-size-2xl);
+  --text-2xl--line-height: var(--vt-line-height-2xl);
+  --text-3xl: var(--vt-font-size-3xl);
+  --text-3xl--line-height: var(--vt-line-height-3xl);
+  --text-4xl: var(--vt-font-size-4xl);
+  --text-4xl--line-height: var(--vt-line-height-4xl);
+  --text-5xl: var(--vt-font-size-5xl);
+  --text-5xl--line-height: var(--vt-line-height-5xl);
+  --text-6xl: var(--vt-font-size-6xl);
+  --text-6xl--line-height: var(--vt-line-height-6xl);
+  --font-weight-light: var(--vt-font-weight-light);
+  --font-weight-normal: var(--vt-font-weight-regular);
+  --font-weight-medium: var(--vt-font-weight-medium);
+  --font-weight-semibold: var(--vt-font-weight-semibold);
+  --font-weight-bold: var(--vt-font-weight-bold);
+
+  /* sombras: shadow-sm, shadow-brand-md, shadow-error-md ... */
+  --shadow-2xs: var(--vt-elevation-shadow-2xs);
+  --shadow-brand-2xs: var(--vt-elevation-brand-shadow-2xs);
+  --shadow-xs: var(--vt-elevation-shadow-xs);
+  --shadow-brand-xs: var(--vt-elevation-brand-shadow-xs);
+  --shadow-sm: var(--vt-elevation-shadow-sm);
+  --shadow-brand-sm: var(--vt-elevation-brand-shadow-sm);
+  --shadow-md: var(--vt-elevation-shadow-md);
+  --shadow-brand-md: var(--vt-elevation-brand-shadow-md);
+  --shadow-lg: var(--vt-elevation-shadow-lg);
+  --shadow-brand-lg: var(--vt-elevation-brand-shadow-lg);
+  --shadow-xl: var(--vt-elevation-shadow-xl);
+  --shadow-brand-xl: var(--vt-elevation-brand-shadow-xl);
+  --shadow-2xl: var(--vt-elevation-shadow-2xl);
+  --shadow-brand-2xl: var(--vt-elevation-brand-shadow-2xl);
+  --shadow-error-md: var(--vt-elevation-error-shadow-md);
+  --shadow-secondary-md: var(--vt-elevation-secondary-shadow-md);
+
+  /* alturas de controles: h-button-sm, h-input-md ... */
+  --spacing-button-sm: var(--vt-size-button-sm);
+  --spacing-button-default: var(--vt-size-button-default);
+  --spacing-button-lg: var(--vt-size-button-lg);
+  --spacing-button-icon-xs: var(--vt-size-button-icon-xs);
+  --spacing-button-icon-sm: var(--vt-size-button-icon-sm);
+  --spacing-button-icon: var(--vt-size-button-icon);
+  --spacing-button-icon-lg: var(--vt-size-button-icon-lg);
+  --spacing-input-md: var(--vt-size-input-md);
+  --spacing-input-sm: var(--vt-size-input-sm);
+  --spacing-input-xs: var(--vt-size-input-xs);
+}
+
+/* breakpoints precisam de valor literal */
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
+
+/* estilos de texto do Figma como utilitários: vt-text-medium-sm, vt-text-bold-2xl ... */
+@utility vt-text-light-xs {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xs);
+  line-height: var(--vt-line-height-xs);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-sm {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-sm);
+  line-height: var(--vt-line-height-sm);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-base {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-base);
+  line-height: var(--vt-line-height-base);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-lg {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-lg);
+  line-height: var(--vt-line-height-lg);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xl);
+  line-height: var(--vt-line-height-xl);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-2xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-2xl);
+  line-height: var(--vt-line-height-2xl);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-3xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-3xl);
+  line-height: var(--vt-line-height-3xl);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-4xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-4xl);
+  line-height: var(--vt-line-height-4xl);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-5xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-5xl);
+  line-height: var(--vt-line-height-5xl);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-light-6xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-6xl);
+  line-height: var(--vt-line-height-6xl);
+  font-weight: var(--vt-font-weight-light);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-xs {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xs);
+  line-height: var(--vt-line-height-xs);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-sm {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-sm);
+  line-height: var(--vt-line-height-sm);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-base {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-base);
+  line-height: var(--vt-line-height-base);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-lg {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-lg);
+  line-height: var(--vt-line-height-lg);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xl);
+  line-height: var(--vt-line-height-xl);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-2xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-2xl);
+  line-height: var(--vt-line-height-2xl);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-3xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-3xl);
+  line-height: var(--vt-line-height-3xl);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-4xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-4xl);
+  line-height: var(--vt-line-height-4xl);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-5xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-5xl);
+  line-height: var(--vt-line-height-5xl);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-regular-6xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-6xl);
+  line-height: var(--vt-line-height-6xl);
+  font-weight: var(--vt-font-weight-regular);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-xs {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xs);
+  line-height: var(--vt-line-height-xs);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-sm {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-sm);
+  line-height: var(--vt-line-height-sm);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-base {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-base);
+  line-height: var(--vt-line-height-base);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-lg {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-lg);
+  line-height: var(--vt-line-height-lg);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xl);
+  line-height: var(--vt-line-height-xl);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-2xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-2xl);
+  line-height: var(--vt-line-height-2xl);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-3xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-3xl);
+  line-height: var(--vt-line-height-3xl);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-4xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-4xl);
+  line-height: var(--vt-line-height-4xl);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-5xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-5xl);
+  line-height: var(--vt-line-height-5xl);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-bold-6xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-6xl);
+  line-height: var(--vt-line-height-6xl);
+  font-weight: var(--vt-font-weight-bold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-xs {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xs);
+  line-height: var(--vt-line-height-xs);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-sm {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-sm);
+  line-height: var(--vt-line-height-sm);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-base {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-base);
+  line-height: var(--vt-line-height-base);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-lg {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-lg);
+  line-height: var(--vt-line-height-lg);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xl);
+  line-height: var(--vt-line-height-xl);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-2xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-2xl);
+  line-height: var(--vt-line-height-2xl);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-3xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-3xl);
+  line-height: var(--vt-line-height-3xl);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-4xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-4xl);
+  line-height: var(--vt-line-height-4xl);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-5xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-5xl);
+  line-height: var(--vt-line-height-5xl);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-medium-6xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-6xl);
+  line-height: var(--vt-line-height-6xl);
+  font-weight: var(--vt-font-weight-medium);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-xs {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xs);
+  line-height: var(--vt-line-height-xs);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-sm {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-sm);
+  line-height: var(--vt-line-height-sm);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-base {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-base);
+  line-height: var(--vt-line-height-base);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-lg {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-lg);
+  line-height: var(--vt-line-height-lg);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-xl);
+  line-height: var(--vt-line-height-xl);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-2xl {
+  font-family: var(--vt-font-family-text);
+  font-size: var(--vt-font-size-2xl);
+  line-height: var(--vt-line-height-2xl);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-3xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-3xl);
+  line-height: var(--vt-line-height-3xl);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-4xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-4xl);
+  line-height: var(--vt-line-height-4xl);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-5xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-5xl);
+  line-height: var(--vt-line-height-5xl);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+@utility vt-text-semibold-6xl {
+  font-family: var(--vt-font-family-display);
+  font-size: var(--vt-font-size-6xl);
+  line-height: var(--vt-line-height-6xl);
+  font-weight: var(--vt-font-weight-semibold);
+  letter-spacing: 0.02em;
+}

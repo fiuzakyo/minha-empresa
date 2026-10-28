@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-input",
+  "title": "Number Input",
+  "description": "Figma: Field / Number Input",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme",
+    "@futuredata/button"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/number-input.tsx",
+      "content": "/**\n * Number Input — Voltron Design System (Figma: 02 · Molecules › Field / Number Input)\n *\n * Composição (o shadcn não tem Number Input nativo): Button ghost icon-sm (−/+) nas pontas\n * e o valor centralizado. Contêiner radius/lg (sm/xs: radius/md), --card, Elevation/shadow-xs.\n * - size: md | sm | xs (padding vertical 6 · 4 · 2)\n * - min, max, step · controlado (value/onValueChange) ou não (defaultValue)\n */\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { MinusIcon, PlusIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/futuredata/ui/button\"\n\nconst numberInputVariants = cva(\n  [\n    \"flex w-full items-center gap-1 border border-input bg-card px-1 shadow-xs\",\n    \"transition-[background-color,border-color,box-shadow] hover:bg-background\",\n    \"focus-within:border-vt-focus-halo focus-within:shadow-none focus-within:ring-[3px] focus-within:ring-vt-focus-halo\",\n    \"has-[input[aria-invalid=true]]:border-destructive has-[input[aria-invalid=true]]:shadow-none\",\n    \"has-[input:disabled]:border-transparent has-[input:disabled]:bg-background has-[input:disabled]:shadow-none\",\n  ],\n  {\n    variants: {\n      size: {\n        md: \"rounded-lg py-1.5\",\n        sm: \"rounded-md py-1\",\n        xs: \"rounded-md py-0.5\",\n      },\n    },\n    defaultVariants: { size: \"md\" },\n  }\n)\n\nfunction NumberInput({\n  className,\n  size = \"md\",\n  value: valueProp,\n  defaultValue = 0,\n  onValueChange,\n  min = Number.NEGATIVE_INFINITY,\n  max = Number.POSITIVE_INFINITY,\n  step = 1,\n  disabled,\n  decrementLabel = \"Diminuir\",\n  incrementLabel = \"Aumentar\",\n  ...props\n}: Omit<React.ComponentProps<\"input\">, \"size\" | \"value\" | \"defaultValue\" | \"onChange\" | \"min\" | \"max\" | \"step\"> &\n  VariantProps<typeof numberInputVariants> & {\n    value?: number\n    defaultValue?: number\n    onValueChange?: (value: number) => void\n    min?: number\n    max?: number\n    step?: number\n    decrementLabel?: string\n    incrementLabel?: string\n  }) {\n  const [inner, setInner] = React.useState(defaultValue)\n  const value = valueProp ?? inner\n  const set = (v: number) => {\n    const next = Math.min(max, Math.max(min, v))\n    if (valueProp === undefined) setInner(next)\n    onValueChange?.(next)\n  }\n  return (\n    <div data-slot=\"number-input\" data-size={size} className={cn(numberInputVariants({ size }), className)}>\n      <Button\n        type=\"button\"\n        variant=\"ghost\"\n        size=\"icon-sm\"\n        aria-label={decrementLabel}\n        disabled={disabled || value <= min}\n        onClick={() => set(value - step)}\n      >\n        <MinusIcon />\n      </Button>\n      <input\n        type=\"number\"\n        inputMode=\"decimal\"\n        data-slot=\"number-input-control\"\n        value={Number.isFinite(value) ? value : \"\"}\n        min={Number.isFinite(min) ? min : undefined}\n        max={Number.isFinite(max) ? max : undefined}\n        step={step}\n        disabled={disabled}\n        onChange={(e) => set(e.target.valueAsNumber || 0)}\n        className=\"min-w-0 flex-1 [appearance:textfield] bg-transparent text-center text-sm text-foreground outline-none disabled:text-vt-text-disabled [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none\"\n        {...props}\n      />\n      <Button\n        type=\"button\"\n        variant=\"ghost\"\n        size=\"icon-sm\"\n        aria-label={incrementLabel}\n        disabled={disabled || value >= max}\n        onClick={() => set(value + step)}\n      >\n        <PlusIcon />\n      </Button>\n    </div>\n  )\n}\n\nexport { NumberInput, numberInputVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

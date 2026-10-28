@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-item",
+  "title": "Stat Item",
+  "description": "Figma: Stat Item",
+  "dependencies": [],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/stat-item.tsx",
+      "content": "/**\n * Stat Item — Voltron Design System (Figma: 02 · Molecules › Stat Item)\n * Métrica compacta: ícone + valor (SemiBold) + rótulo opcional. size: md (ícone 16, texto sm) | sm (ícone 14, texto xs).\n */\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction StatItem({\n  icon,\n  value,\n  label,\n  size = \"md\",\n  className,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"children\"> & {\n  icon?: React.ReactNode\n  value: React.ReactNode\n  label?: React.ReactNode\n  size?: \"md\" | \"sm\"\n}) {\n  return (\n    <div\n      data-slot=\"stat-item\"\n      data-size={size}\n      className={cn(\n        \"inline-flex items-center text-foreground [&_svg]:shrink-0\",\n        size === \"md\" ? \"gap-1.5 text-sm [&_svg]:size-4\" : \"gap-1 text-xs [&_svg]:size-3.5\",\n        className\n      )}\n      {...props}\n    >\n      {icon}\n      <span className=\"font-semibold tabular-nums\">{value}</span>\n      {label && <span className=\"text-muted-foreground\">{label}</span>}\n    </div>\n  )\n}\n\nexport { StatItem }\n",
+      "type": "registry:component",
+      "target": "components/stat-item.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - name: Arquivos gerados estão em dia
+        run: |
+          git diff --exit-code -- tokens/dist shadcn/registry.json shadcn/public/r shadcn/registry/futuredata/styles tailwind/src/index.ts \
+            || (echo "::error::Rode 'npm run build' e 'npm run figma:manifest' e faça commit dos arquivos gerados." && exit 1)
+      - name: O que mudou no Figma
+        if: github.event_name == 'pull_request'
+        run: |
+          npm run --silent figma:diff -- --base origin/${{ github.base_ref }} > figma-diff.md
+          cat figma-diff.md >> "$GITHUB_STEP_SUMMARY"

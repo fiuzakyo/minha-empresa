@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "model-selector",
+  "title": "Model Selector",
+  "description": "Figma: Model Selector",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme",
+    "@futuredata/dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/ai/model-selector.tsx",
+      "content": "/**\n * Model Selector — Voltron Design System (Figma: 02 · Molecules › Model Selector)\n *\n * Seletor do modelo de IA no Prompt Input (DropdownMenu): ícone + nome (SemiBold xs) + chevron.\n * Hover → --muted · Open → --accent + borda --ring e CaretUp.\n */\nimport * as React from \"react\"\nimport { CaretDownIcon, SparkleIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuTrigger,\n} from \"@/registry/futuredata/ui/dropdown-menu\"\n\ntype ModelOption = { value: string; label: string; icon?: React.ReactNode }\n\nfunction ModelSelector({\n  models,\n  value,\n  onValueChange,\n  className,\n}: {\n  models: ModelOption[]\n  value: string\n  onValueChange: (value: string) => void\n  className?: string\n}) {\n  const current = models.find((m) => m.value === value) ?? models[0]\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger\n        data-slot=\"model-selector\"\n        className={cn(\n          \"group/model inline-flex h-9 cursor-pointer items-center gap-2 rounded-md border border-border bg-card px-3 text-xs font-semibold text-foreground outline-none\",\n          \"transition-colors hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/50 data-[state=open]:border-ring data-[state=open]:bg-accent\",\n          \"[&_svg]:size-4 [&_svg]:shrink-0\",\n          className\n        )}\n      >\n        {current?.icon ?? <SparkleIcon />}\n        {current?.label}\n        <CaretDownIcon className=\"transition-transform group-data-[state=open]/model:rotate-180\" />\n      </DropdownMenuTrigger>\n      <DropdownMenuContent align=\"end\">\n        <DropdownMenuRadioGroup value={value} onValueChange={onValueChange}>\n          {models.map((m) => (\n            <DropdownMenuRadioItem key={m.value} value={m.value}>\n              {m.label}\n            </DropdownMenuRadioItem>\n          ))}\n        </DropdownMenuRadioGroup>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  )\n}\n\nexport { ModelSelector }\nexport type { ModelOption }\n",
+      "type": "registry:component",
+      "target": "components/ai/model-selector.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

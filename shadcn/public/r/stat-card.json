@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-card",
+  "title": "Stat Card",
+  "description": "Figma: Stat Card",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/stat-card.tsx",
+      "content": "/**\n * Stat Card — Voltron Design System (Figma: 02 · Molecules › Stat Card)\n *\n * Card de KPI (padrão SectionCards do bloco dashboard-01): rótulo + atalho, valor em destaque,\n * variação e mini barras decorativas. trend: up (success/strong) | down (error/strong) | neutral (--muted-foreground).\n * Moldura --muted com cartão interno --card, ambos radius/card.\n */\nimport * as React from \"react\"\nimport { ArrowUpRightIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction StatCard({\n  className,\n  label,\n  value,\n  delta,\n  trend = \"neutral\",\n  href,\n  chart = true,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"children\"> & {\n  label: React.ReactNode\n  value: React.ReactNode\n  /** Variação ou contexto (ex.: \"+12% desde ontem\"). */\n  delta?: React.ReactNode\n  trend?: \"up\" | \"down\" | \"neutral\"\n  /** Mostra o atalho ↗ (Figma Link). */\n  href?: string\n  /** Mini barras decorativas (Figma Chart). */\n  chart?: boolean\n}) {\n  return (\n    <div\n      data-slot=\"stat-card\"\n      data-trend={trend}\n      className={cn(\"flex flex-col gap-2.5 rounded-card border border-border bg-muted px-1 pt-3 pb-1\", className)}\n      {...props}\n    >\n      <div className=\"flex items-center justify-between px-2 text-sm text-muted-foreground\">\n        <span>{label}</span>\n        {href && (\n          <a href={href} aria-label=\"Ver detalhes\" className=\"rounded-sm outline-none hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50\">\n            <ArrowUpRightIcon className=\"size-4\" />\n          </a>\n        )}\n      </div>\n      <div className=\"flex items-end gap-3 rounded-card border border-border bg-card p-3\">\n        <div className=\"flex min-w-0 flex-1 flex-col gap-1\">\n          <span className=\"text-2xl font-semibold text-foreground tabular-nums\">{value}</span>\n          {delta && (\n            <span\n              className={cn(\n                \"text-xs\",\n                trend === \"up\" && \"text-vt-success-strong\",\n                trend === \"down\" && \"text-vt-error-strong\",\n                trend === \"neutral\" && \"text-muted-foreground\"\n              )}\n            >\n              {delta}\n            </span>\n          )}\n        </div>\n        {chart && (\n          <div aria-hidden=\"true\" className=\"flex items-end gap-1\">\n            {[10, 16, 12, 20].map((h, i) => (\n              <span key={i} className=\"w-1.5 bg-border\" style={{ height: h }} />\n            ))}\n          </div>\n        )}\n      </div>\n    </div>\n  )\n}\n\nexport { StatCard }\n",
+      "type": "registry:component",
+      "target": "components/stat-card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

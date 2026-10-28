@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "title": "Skeleton",
+  "description": "Figma: Profile Card",
+  "dependencies": [],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/skeleton.tsx",
+      "content": "/**\n * Skeleton — Voltron Design System (usado no Profile Card, State=Skeleton)\n * shadcn/ui nativo: bloco --muted com radius/sm e pulso.\n */\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"skeleton\" className={cn(\"animate-pulse rounded-sm bg-muted\", className)} {...props} />\n}\n\nexport { Skeleton }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

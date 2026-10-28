@@ -1,0 +1,35 @@
+{
+  "name": "futuredata-design-system",
+  "private": true,
+  "description": "Voltron Design System \u2014 tokens e componentes gerados a partir do Figma",
+  "workspaces": [
+    "tokens",
+    "react",
+    "tailwind",
+    "shadcn"
+  ],
+  "scripts": {
+    "tokens": "node tokens/scripts/build.mjs",
+    "build": "npm run tokens && npm run build -w @fiuzakyo/ui-shadcn && npm run build -w @fiuzakyo/ui-react && npm run build -w @fiuzakyo/ui-tailwind",
+    "typecheck": "tsc -p shadcn && node scripts/gen-index.mjs tailwind/src/index.ts && tsc -p tailwind",
+    "playground": "node playground/build.mjs",
+    "figma:manifest": "node scripts/figma-manifest.mjs",
+    "figma:diff": "node scripts/figma-diff.mjs",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "npm run build && node scripts/release.mjs"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.0",
+    "esbuild": "^0.25.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

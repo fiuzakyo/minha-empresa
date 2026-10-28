@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "Figma: Switch",
+  "dependencies": [
+    "radix-ui@^1.4.3",
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/switch.tsx",
+      "content": "/**\n * Switch — Voltron Design System (Figma: 01 · Atoms › Switch)\n *\n * shadcn/ui nativo (Radix) + extensão + custom aprovado:\n * - size: \"sm\" (36×20) | \"default\" (48×24)  — Figma Size sm | md\n * - icons: mostra X/Check dentro do thumb (Figma Type=Icon); troque com iconOff / iconOn\n * - animação \"líquida\": o thumb estica enquanto é pressionado (Figma State=Pressed)\n */\nimport * as React from \"react\"\nimport { Switch as SwitchPrimitive } from \"radix-ui\"\nimport { CheckIcon, XIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Switch({\n  className,\n  size = \"sm\",\n  icons = false,\n  iconOff,\n  iconOn,\n  ...props\n}: React.ComponentProps<typeof SwitchPrimitive.Root> & {\n  size?: \"sm\" | \"default\"\n  /** Mostra ícones no thumb (Figma Type=Icon). */\n  icons?: boolean\n  iconOff?: React.ReactNode\n  iconOn?: React.ReactNode\n}) {\n  return (\n    <SwitchPrimitive.Root\n      data-slot=\"switch\"\n      data-size={size}\n      className={cn(\n        \"peer group/switch inline-flex shrink-0 cursor-pointer items-center rounded-full bg-input p-0.5 shadow-xs outline-none\",\n        \"transition-[background-color,box-shadow] duration-200\",\n        \"data-[state=checked]:bg-primary\",\n        \"focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        \"disabled:cursor-not-allowed disabled:opacity-50\",\n        \"data-[size=sm]:h-5 data-[size=sm]:w-9 data-[size=default]:h-6 data-[size=default]:w-12\",\n        className\n      )}\n      {...props}\n    >\n      <SwitchPrimitive.Thumb\n        data-slot=\"switch-thumb\"\n        className={cn(\n          \"pointer-events-none relative block rounded-full bg-card shadow-xs ring-0\",\n          \"transition-[width,translate] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]\",\n          // sm: thumb 16px, esticado 24px\n          \"group-data-[size=sm]/switch:size-4 group-data-[size=sm]/switch:group-active/switch:w-6\",\n          \"group-data-[size=sm]/switch:data-[state=checked]:translate-x-4 group-data-[size=sm]/switch:group-active/switch:data-[state=checked]:translate-x-2\",\n          // default: thumb 20px, esticado 32px\n          \"group-data-[size=default]/switch:size-5 group-data-[size=default]/switch:group-active/switch:w-8\",\n          \"group-data-[size=default]/switch:data-[state=checked]:translate-x-6 group-data-[size=default]/switch:group-active/switch:data-[state=checked]:translate-x-3\"\n        )}\n      >\n        {icons && (\n          <>\n            <span className=\"absolute inset-0 grid place-content-center text-muted-foreground transition-opacity group-data-[state=checked]/switch:opacity-0 [&_svg]:size-2.5 group-data-[size=default]/switch:[&_svg]:size-3\">\n              {iconOff ?? <XIcon weight=\"bold\" />}\n            </span>\n            <span className=\"absolute inset-0 grid place-content-center text-primary opacity-0 transition-opacity group-data-[state=checked]/switch:opacity-100 [&_svg]:size-2.5 group-data-[size=default]/switch:[&_svg]:size-3\">\n              {iconOn ?? <CheckIcon weight=\"bold\" />}\n            </span>\n          </>\n        )}\n      </SwitchPrimitive.Thumb>\n    </SwitchPrimitive.Root>\n  )\n}\n\nexport { Switch }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

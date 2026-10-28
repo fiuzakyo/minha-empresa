@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "notifications-panel",
+  "title": "Notifications Panel",
+  "description": "Figma: Notifications",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme",
+    "@futuredata/button",
+    "@futuredata/popover",
+    "@futuredata/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/notifications/notifications-panel.tsx",
+      "content": "/**\n * Notifications Panel — Voltron Design System (Figma: 03 · Organisms › Notifications)\n *\n * Centro de notificações (Popover + Tabs + lista de NotificationItem): título,\n * \"Marcar todas como lidas\", filtros em Tabs (pills-elevated) com contadores e a lista.\n * Cada produto define os tipos e os filtros.\n *\n *   <Popover><PopoverTrigger asChild><Button …/></PopoverTrigger>\n *     <NotificationsPanel filters={[{ value: \"todas\", label: \"Todas\", count: 8, items: <>…</> }]} />\n *   </Popover>\n */\nimport * as React from \"react\"\nimport { ChecksIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/futuredata/ui/button\"\nimport { PopoverContent } from \"@/registry/futuredata/ui/popover\"\nimport { Tabs, TabsContent, TabsCount, TabsList, TabsTrigger } from \"@/registry/futuredata/ui/tabs\"\n\ntype NotificationsFilter = {\n  value: string\n  label: React.ReactNode\n  count?: number\n  /** <NotificationItem/>s deste filtro. */\n  items: React.ReactNode\n}\n\nfunction NotificationsPanel({\n  title = \"Notificações\",\n  filters,\n  onMarkAllRead,\n  className,\n  asPopover = true,\n}: {\n  title?: React.ReactNode\n  filters: NotificationsFilter[]\n  onMarkAllRead?: () => void\n  className?: string\n  /** false renderiza o painel fora de um Popover (ex.: página dedicada). */\n  asPopover?: boolean\n}) {\n  const body = (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex items-center justify-between gap-4\">\n        <h2 className=\"text-base font-semibold text-foreground\">{title}</h2>\n        {onMarkAllRead && (\n          <Button variant=\"link\" size=\"sm\" className=\"px-0\" onClick={onMarkAllRead}>\n            <ChecksIcon data-icon=\"inline-start\" />\n            Marcar todas como lidas\n          </Button>\n        )}\n      </div>\n      <Tabs defaultValue={filters[0]?.value}>\n        <TabsList variant=\"pills-elevated\">\n          {filters.map((f) => (\n            <TabsTrigger key={f.value} value={f.value}>\n              {f.label}\n              {f.count != null && <TabsCount>{f.count}</TabsCount>}\n            </TabsTrigger>\n          ))}\n        </TabsList>\n        {filters.map((f) => (\n          <TabsContent key={f.value} value={f.value}>\n            <div role=\"list\" className=\"-mx-2 flex max-h-[28rem] flex-col overflow-y-auto\">\n              {f.items}\n            </div>\n          </TabsContent>\n        ))}\n      </Tabs>\n    </div>\n  )\n  if (!asPopover) {\n    return <div className={cn(\"w-[440px] rounded-xl border border-border bg-popover p-5 shadow-lg\", className)}>{body}</div>\n  }\n  return (\n    <PopoverContent align=\"end\" className={cn(\"w-[440px] p-5\", className)}>\n      {body}\n    </PopoverContent>\n  )\n}\n\nexport { NotificationsPanel }\nexport type { NotificationsFilter }\n",
+      "type": "registry:component",
+      "target": "components/notifications/notifications-panel.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

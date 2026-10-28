@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "announcement-badge",
+  "title": "Announcement Badge",
+  "description": "Figma: Announcement Badge",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/announcement-badge.tsx",
+      "content": "/**\n * Announcement Badge — Voltron Design System (Figma: 01 · Atoms › Announcement Badge)\n *\n * Pílula de anúncio clicável (composição sobre Badge outline, rounded-full, render como <a>).\n * A pílula inteira é um único link.\n * - type: \"icon\"   → ícone em círculo + texto\n *         \"action\" → ícone + texto + seta em círculo\n *         \"split\"  → texto | ação (linkText + seta)\n * - tone: neutral | brand\n */\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { ArrowRightIcon, ArrowUpRightIcon, BellRingingIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst announcementBadgeVariants = cva(\n  [\n    \"group/announcement inline-flex h-8 w-fit items-center rounded-full border border-border bg-card text-sm font-medium text-vt-text-secondary shadow-xs outline-none\",\n    \"transition-shadow hover:shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n    \"[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0\",\n  ],\n  {\n    variants: {\n      type: {\n        icon: \"gap-2 ps-1 pe-3\",\n        action: \"gap-2 ps-3 pe-1\",\n        split: \"gap-0\",\n      },\n      tone: {\n        neutral: \"\",\n        brand: \"\",\n      },\n    },\n    defaultVariants: {\n      type: \"icon\",\n      tone: \"neutral\",\n    },\n  }\n)\n\nfunction AnnouncementBadge({\n  className,\n  type = \"icon\",\n  tone = \"neutral\",\n  icon = <BellRingingIcon />,\n  linkText = \"Explorar\",\n  children,\n  ...props\n}: React.ComponentProps<\"a\"> &\n  VariantProps<typeof announcementBadgeVariants> & {\n    /** Ícone Phosphor (Figma Icon). */\n    icon?: React.ReactNode\n    /** Texto da ação no tipo \"split\" (Figma Link text). */\n    linkText?: React.ReactNode\n  }) {\n  const circle = cn(\n    \"inline-flex size-6 shrink-0 items-center justify-center rounded-full\",\n    tone === \"brand\" ? \"bg-vt-primary-soft\" : \"bg-muted\"\n  )\n  return (\n    <a\n      data-slot=\"announcement-badge\"\n      data-type={type}\n      data-tone={tone}\n      className={cn(announcementBadgeVariants({ type, tone }), className)}\n      {...props}\n    >\n      {type === \"icon\" && (\n        <>\n          <span aria-hidden=\"true\" className={circle}>\n            {icon}\n          </span>\n          {children}\n        </>\n      )}\n      {type === \"action\" && (\n        <>\n          <span aria-hidden=\"true\" className=\"inline-flex\">\n            {icon}\n          </span>\n          {children}\n          <span aria-hidden=\"true\" className={circle}>\n            <ArrowUpRightIcon />\n          </span>\n        </>\n      )}\n      {type === \"split\" && (\n        <>\n          <span className=\"inline-flex h-full items-center px-3\">{children}</span>\n          <span aria-hidden=\"true\" className=\"h-full w-px bg-muted\" />\n          <span\n            className={cn(\n              \"inline-flex h-full items-center gap-1 px-3\",\n              tone === \"brand\" ? \"text-primary\" : \"text-muted-foreground\"\n            )}\n          >\n            {linkText}\n            <ArrowRightIcon aria-hidden=\"true\" />\n          </span>\n        </>\n      )}\n    </a>\n  )\n}\n\nexport { AnnouncementBadge, announcementBadgeVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

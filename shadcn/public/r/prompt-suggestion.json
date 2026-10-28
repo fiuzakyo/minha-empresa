@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "prompt-suggestion",
+  "title": "Prompt Suggestion",
+  "description": "Figma: Prompt Suggestion",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/ai/prompt-suggestion.tsx",
+      "content": "/**\n * Prompt Suggestion — Voltron Design System (Figma: 02 · Molecules › Prompt Suggestion)\n * Ação rápida abaixo do Prompt Input (padrão Suggestion do AI Elements): pílula com texto\n * e seta ↗ em círculo --muted. Hover → fundo --muted e círculo --card.\n */\nimport * as React from \"react\"\nimport { ArrowUpRightIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction PromptSuggestion({ className, children, type = \"button\", ...props }: React.ComponentProps<\"button\">) {\n  return (\n    <button\n      type={type}\n      data-slot=\"prompt-suggestion\"\n      className={cn(\n        \"group/suggestion inline-flex h-9 cursor-pointer items-center gap-2.5 rounded-full py-1.5 ps-3 pe-1.5 text-sm font-medium text-foreground outline-none\",\n        \"transition-colors hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n      <span aria-hidden=\"true\" className=\"flex size-6 items-center justify-center rounded-full bg-muted transition-colors group-hover/suggestion:bg-card\">\n        <ArrowUpRightIcon className=\"size-3.5\" />\n      </span>\n    </button>\n  )\n}\n\nexport { PromptSuggestion }\n",
+      "type": "registry:component",
+      "target": "components/ai/prompt-suggestion.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
