@@ -1,6 +1,6 @@
 {
   "name": "@fiuzakyo/ui-tailwind",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Componentes React do Voltron Design System estilizados com Tailwind CSS v4 (mesmo código do registro shadcn, empacotado como biblioteca)",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -30,7 +30,7 @@
     "tailwindcss": "^4.1.0"
   },
   "dependencies": {
-    "@fiuzakyo/tokens": "^0.0.0",
+    "@fiuzakyo/tokens": "^1.0.0",
     "@phosphor-icons/react": "^2.1.10",
     "@tanstack/react-table": "^8.21.3",
     "class-variance-authority": "^0.7.1",
