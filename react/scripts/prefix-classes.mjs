@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Gera o código do pacote @futuredata/ui-react a partir do registro shadcn.
+ * Gera o código do pacote @fiuzakyo/ui-react a partir do registro shadcn.
  *
  * O registro (shadcn/registry/futuredata) é a ÚNICA fonte dos componentes. Aqui as classes Tailwind
  * de cada componente ganham o prefixo "fd:" (Tailwind v4 prefix) para que o pacote React possa ser

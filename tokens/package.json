@@ -1,18 +1,34 @@
 {
-  "name": "@futuredata/tokens",
+  "name": "@fiuzakyo/tokens",
   "version": "0.0.0",
   "description": "Tokens do Voltron Design System (CSS, Tailwind v4, JSON DTCG e JS), gerados a partir do Figma",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
     "./voltron.css": "./dist/voltron.css",
     "./tailwind.css": "./dist/tailwind.css",
     "./json/*": "./dist/tokens.*.json"
   },
-  "files": ["dist"],
-  "sideEffects": ["*.css"],
-  "scripts": { "build": "node scripts/build.mjs" },
-  "publishConfig": { "access": "restricted" }
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiuzakyo/minha-empresa.git",
+    "directory": "tokens"
+  }
 }

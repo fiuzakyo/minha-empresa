@@ -125,7 +125,7 @@ console.log(report)
 if (args.includes("--changeset") && bump !== "none") {
   const level = firstSync ? "major" : bump
   const touchesTokens = firstSync || tokenChanges.length || styleChanges.length
-  const pkgs = [touchesTokens && "@futuredata/tokens", "@futuredata/ui-react", "@futuredata/ui-tailwind"].filter(Boolean)
+  const pkgs = [touchesTokens && "@fiuzakyo/tokens", "@fiuzakyo/ui-react", "@fiuzakyo/ui-tailwind"].filter(Boolean)
   const date = new Date().toLocaleDateString("sv-SE")
   mkdirSync(join(repo, ".changeset"), { recursive: true })
   const file = join(repo, ".changeset", `figma-sync-${date}.md`)

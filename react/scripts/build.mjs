@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Build do @futuredata/ui-react:
+// Build do @fiuzakyo/ui-react:
 // 1. gera .generated/ com as classes prefixadas  2. confere o prefixo  3. index  4. JS + tipos  5. CSS
 import { execFileSync } from "node:child_process"
 import { mkdirSync, rmSync, statSync } from "node:fs"

@@ -12,14 +12,14 @@ Projeto com shadcn/ui e Tailwind v4. No `components.json`, registre o namespace:
 {
   "registries": {
     "@futuredata": {
-      "url": "https://raw.githubusercontent.com/fiuzakyo/minha-empresa/main/shadcn/public/r/{name}.json",
-      "headers": { "Authorization": "token ${GITHUB_TOKEN}" }
+      "url": "https://raw.githubusercontent.com/fiuzakyo/minha-empresa/main/shadcn/public/r/{name}.json"
     }
   }
 }
 ```
 
-`GITHUB_TOKEN` é um token pessoal com leitura do repositório (o repositório é privado).
+O repositório é público, então não precisa de token. Se ele ficar privado, acrescente
+`"headers": { "Authorization": "token ${GITHUB_TOKEN}" }` com um token que leia o repositório.
 
 Instale o tema e os componentes:
 
@@ -60,5 +60,5 @@ componente do Figma de cada um, está em [`registry.json`](registry.json).
 
 ## Desenvolvimento
 
-`registry.json` e `public/r/` são gerados (`npm run build -w @futuredata/ui-shadcn`). Edite só
+`registry.json` e `public/r/` são gerados (`npm run build -w @fiuzakyo/ui-shadcn`). Edite só
 `registry/futuredata/`. O tema em `registry/futuredata/styles/` é gerado pelo build dos tokens.

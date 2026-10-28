@@ -1,23 +1,25 @@
-# `@futuredata/ui-react`
+# `@fiuzakyo/ui-react`
 
 Os componentes do Voltron para **React sem Tailwind**: um pacote npm + um arquivo CSS pronto.
 
 ## Instalação
 
+> Os pacotes ficam no GitHub Packages: configure o `.npmrc` uma vez, como no [README da raiz](../README.md#instalando-os-pacotes-github-packages).
+
 ```bash
-npm i @futuredata/ui-react
+npm i @fiuzakyo/ui-react
 ```
 
 Importe o CSS uma vez (no entry da aplicação ou no layout raiz):
 
 ```ts
-import "@futuredata/ui-react/styles.css"
+import "@fiuzakyo/ui-react/styles.css"
 ```
 
 ## Uso
 
 ```tsx
-import { Button, Alert, Tabs, TabsList, TabsTrigger, TabsContent } from "@futuredata/ui-react"
+import { Button, Alert, Tabs, TabsList, TabsTrigger, TabsContent } from "@fiuzakyo/ui-react"
 
 export function Exemplo() {
   return (
@@ -29,7 +31,7 @@ export function Exemplo() {
 }
 ```
 
-A API é idêntica à de `@futuredata/ui-tailwind` e à do registro shadcn.
+A API é idêntica à de `@fiuzakyo/ui-tailwind` e à do registro shadcn.
 
 ## Como funciona
 

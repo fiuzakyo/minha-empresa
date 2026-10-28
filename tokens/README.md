@@ -1,4 +1,4 @@
-# `@futuredata/tokens`
+# `@fiuzakyo/tokens`
 
 Tokens do Voltron gerados das variáveis do Figma (12 coleções, 640 variáveis), com 3 marcas e 2 temas.
 
@@ -8,6 +8,14 @@ Tokens do Voltron gerados das variáveis do Figma (12 coleções, 640 variáveis
 | `tailwind.css` | tema do Tailwind v4 (`@theme inline`) apontando para as variáveis acima |
 | `json/tokens.<marca>.<tema>.json` | valores resolvidos em formato W3C DTCG (outras plataformas, apps nativos) |
 | `index.js` / `index.d.ts` | os mesmos valores em JS/TS: `tokens.verax.dark["color.primary.base"]` |
+
+## Instalação
+
+> Os pacotes ficam no GitHub Packages: configure o `.npmrc` uma vez, como no [README da raiz](../README.md#instalando-os-pacotes-github-packages).
+
+```bash
+npm i @fiuzakyo/tokens
+```
 
 ## Marca e tema
 

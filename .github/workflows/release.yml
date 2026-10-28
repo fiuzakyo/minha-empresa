@@ -19,10 +19,11 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          registry-url: https://registry.npmjs.org
+          registry-url: https://npm.pkg.github.com
+          scope: "@fiuzakyo"
       - run: npm ci
       # Abre/atualiza o PR "Version Packages" com as versões e o CHANGELOG.
-      # Ao fazer merge dele, publica os pacotes (se houver NPM_TOKEN configurado).
+      # Ao fazer merge dele, publica os pacotes no GitHub Packages (npm.pkg.github.com) com o GITHUB_TOKEN.
       - uses: changesets/action@v1
         with:
           version: npm run version
@@ -31,5 +32,4 @@ jobs:
           commit: "chore: versão dos pacotes"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

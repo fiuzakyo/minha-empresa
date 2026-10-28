@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Gera playground/dist/index.html com a vitrine de @futuredata/ui-react (rode `npm run build` antes).
+// Gera playground/dist/index.html com a vitrine de @fiuzakyo/ui-react (rode `npm run build` antes).
 import { build } from "esbuild"
 import { writeFileSync, mkdirSync } from "node:fs"
 import { dirname, join } from "node:path"

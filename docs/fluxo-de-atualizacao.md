@@ -21,7 +21,8 @@ Figma (design)  ──►  sincronização  ──►  Pull Request  ──►  
 5. **Pull Request** em `figma-sync/<data>` com o relatório do diff na descrição. O CI confere tipos, build e
    se os arquivos gerados estão em dia.
 6. **Merge.** O workflow de release abre o PR "Version Packages" (changesets). Ao fazer merge dele, as versões
-   sobem, o CHANGELOG é escrito e os pacotes são publicados.
+   sobem, o CHANGELOG é escrito e os pacotes `@fiuzakyo/*` são publicados no GitHub Packages
+   (com o `GITHUB_TOKEN` do workflow, sem segredo extra).
 
 ## O que o time de desenvolvimento recebe
 

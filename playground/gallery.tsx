@@ -1,5 +1,5 @@
 /**
- * Playground — vitrine dos componentes de @futuredata/ui-react em todas as marcas e temas.
+ * Playground — vitrine dos componentes de @fiuzakyo/ui-react em todas as marcas e temas.
  * `npm run playground` gera playground/dist/index.html (abra no navegador).
  */
 import * as React from "react"
@@ -15,8 +15,8 @@ import {
   SparkleIcon,
   UsersIcon,
 } from "@phosphor-icons/react"
-import * as UI from "@futuredata/ui-react"
-import "@futuredata/ui-react/styles.css"
+import * as UI from "@fiuzakyo/ui-react"
+import "@fiuzakyo/ui-react/styles.css"
 
 const {
   Alert, AnnouncementBadge, AttachmentChip, Avatar, AvatarFallback, AvatarGroup, AvatarStatus, Badge, Balance, Breadcrumb,

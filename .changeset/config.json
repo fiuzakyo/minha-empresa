@@ -2,10 +2,10 @@
   "$schema": "https://unpkg.com/@changesets/config@3.1.1/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "fixed": [["@futuredata/ui-react", "@futuredata/ui-tailwind"]],
+  "fixed": [["@fiuzakyo/ui-react", "@fiuzakyo/ui-tailwind"]],
   "linked": [],
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@futuredata/ui-shadcn"]
+  "ignore": ["@fiuzakyo/ui-shadcn"]
 }

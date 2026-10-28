@@ -1,4 +1,4 @@
-/* Fonte do CSS de @futuredata/ui-react (compilado para dist/styles.css).
+/* Fonte do CSS de @fiuzakyo/ui-react (compilado para dist/styles.css).
  * Tailwind v4 com prefixo "fd:" — o app NÃO precisa de Tailwind e as classes não colidem com as dele.
  * Sem o preflight global do Tailwind: só um reset mínimo dentro dos componentes ([data-slot]). */
 @layer theme, base, components, utilities;

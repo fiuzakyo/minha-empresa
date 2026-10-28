@@ -1,5 +1,5 @@
 {
-  "name": "@futuredata/ui-shadcn",
+  "name": "@fiuzakyo/ui-shadcn",
   "version": "0.0.0",
   "private": true,
   "description": "Registro shadcn/ui do Voltron Design System (componentes copiados para o projeto via `npx shadcn add`)",

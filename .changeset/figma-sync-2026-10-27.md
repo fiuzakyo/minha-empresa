@@ -1,7 +1,7 @@
 ---
-"@futuredata/tokens": major
-"@futuredata/ui-react": major
-"@futuredata/ui-tailwind": major
+"@fiuzakyo/tokens": major
+"@fiuzakyo/ui-react": major
+"@fiuzakyo/ui-tailwind": major
 ---
 
 Primeira versão do Voltron Design System em código, sincronizada com o Figma em 27/10/2026.

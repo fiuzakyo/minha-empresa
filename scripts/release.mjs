@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-// Publica os pacotes com changesets — só se houver token do registro npm configurado.
+// Publica os pacotes @fiuzakyo/* no GitHub Packages com changesets.
+// No GitHub Actions o token é o GITHUB_TOKEN do próprio workflow (permissão packages: write).
 import { execSync } from "node:child_process"
 
-if (!process.env.NPM_TOKEN && !process.env.NODE_AUTH_TOKEN) {
-  console.log("NPM_TOKEN não configurado: versões e CHANGELOG atualizados, publicação no npm pulada.")
+if (!process.env.NODE_AUTH_TOKEN) {
+  console.log("NODE_AUTH_TOKEN ausente: versões e CHANGELOG atualizados, publicação pulada.")
   process.exit(0)
 }
 execSync("npx changeset publish", { stdio: "inherit" })

@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "tokens": "node tokens/scripts/build.mjs",
-    "build": "npm run tokens && npm run build -w @futuredata/ui-shadcn && npm run build -w @futuredata/ui-react && npm run build -w @futuredata/ui-tailwind",
+    "build": "npm run tokens && npm run build -w @fiuzakyo/ui-shadcn && npm run build -w @fiuzakyo/ui-react && npm run build -w @fiuzakyo/ui-tailwind",
     "typecheck": "tsc -p shadcn && node scripts/gen-index.mjs tailwind/src/index.ts && tsc -p tailwind",
     "playground": "node playground/build.mjs",
     "figma:manifest": "node scripts/figma-manifest.mjs",
