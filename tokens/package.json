@@ -1,6 +1,6 @@
 {
   "name": "@fiuzakyo/tokens",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Tokens do Voltron Design System (CSS, Tailwind v4, JSON DTCG e JS), gerados a partir do Figma",
   "type": "module",
   "main": "./dist/index.js",

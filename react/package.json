@@ -1,6 +1,6 @@
 {
   "name": "@fiuzakyo/ui-react",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Componentes React do Voltron Design System com CSS pronto — não exige Tailwind no projeto",
   "type": "module",
   "main": "./dist/index.cjs",
