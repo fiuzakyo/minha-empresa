@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "team-switcher",
+  "title": "Team Switcher",
+  "description": "Figma: Sidebar / Team Switcher",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme",
+    "@futuredata/avatar",
+    "@futuredata/button",
+    "@futuredata/dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/team-switcher.tsx",
+      "content": "/**\n * Team Switcher — Voltron Design System (Figma: 03 · Organisms › Sidebar / Team Switcher)\n *\n * Menu aberto pelo Sidebar / Header para trocar de conta ou workspace (padrão TeamSwitcher do\n * bloco sidebar-07): rótulo, contas (a ativa marcada) e \"Adicionar conta\".\n */\nimport * as React from \"react\"\nimport { CaretUpDownIcon, PlusIcon } from \"@phosphor-icons/react\"\n\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/registry/futuredata/ui/avatar\"\nimport { Button } from \"@/registry/futuredata/ui/button\"\nimport {\n  DropdownMenu,\n  DropdownMenuAccountItem,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/registry/futuredata/ui/dropdown-menu\"\n\ntype Team = { id: string; name: string; description?: string; image?: string; initials?: string }\n\nfunction TeamSwitcher({\n  teams,\n  activeId,\n  onSelect,\n  onAdd,\n  label = \"Contas\",\n  addLabel = \"Adicionar conta\",\n  trigger,\n}: {\n  teams: Team[]\n  activeId: string\n  onSelect: (id: string) => void\n  onAdd?: () => void\n  label?: string\n  addLabel?: string\n  /** Gatilho customizado; o padrão é um Button ghost icon-sm com CaretUpDown. */\n  trigger?: React.ReactNode\n}) {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        {trigger ?? (\n          <Button variant=\"ghost\" size=\"icon-sm\" aria-label=\"Trocar conta\">\n            <CaretUpDownIcon />\n          </Button>\n        )}\n      </DropdownMenuTrigger>\n      <DropdownMenuContent align=\"start\" className=\"w-72\">\n        <DropdownMenuLabel>{label}</DropdownMenuLabel>\n        {teams.map((t) => (\n          <DropdownMenuAccountItem\n            key={t.id}\n            selected={t.id === activeId}\n            onSelect={() => onSelect(t.id)}\n            name={t.name}\n            description={t.description}\n            avatar={\n              <Avatar size=\"md\">\n                {t.image && <AvatarImage src={t.image} alt=\"\" />}\n                <AvatarFallback>{t.initials ?? t.name.slice(0, 2).toUpperCase()}</AvatarFallback>\n              </Avatar>\n            }\n          />\n        ))}\n        {onAdd && (\n          <>\n            <DropdownMenuSeparator />\n            <DropdownMenuItem onSelect={onAdd}>\n              <PlusIcon />\n              {addLabel}\n            </DropdownMenuItem>\n          </>\n        )}\n      </DropdownMenuContent>\n    </DropdownMenu>\n  )\n}\n\nexport { TeamSwitcher }\nexport type { Team }\n",
+      "type": "registry:component",
+      "target": "components/team-switcher.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

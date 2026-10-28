@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile-card",
+  "title": "Profile Card",
+  "description": "Figma: Profile Card",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme",
+    "@futuredata/aspect-ratio",
+    "@futuredata/button",
+    "@futuredata/skeleton",
+    "@futuredata/profile-identity"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/profile-card.tsx",
+      "content": "/**\n * Profile Card — Voltron Design System (Figma: 03 · Organisms › Profile Card)\n *\n * Card de perfil: foto (Image), identidade (Profile Identity), métricas (Stat Item) e ação.\n * - layout: vertical (destaque, foto 4:3) | horizontal (listas, foto 1:1 104px)\n * - action: follow (Button soft + Plus) | following (Button outline + Check) — ou passe o seu\n * - loading: skeleton · hover: Elevation/shadow-md\n * Contêiner --card, --border, radius/card (Verax 0), padding 8.\n */\nimport * as React from \"react\"\nimport { CheckIcon, PlusIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Image } from \"@/registry/futuredata/ui/aspect-ratio\"\nimport { Button } from \"@/registry/futuredata/ui/button\"\nimport { Skeleton } from \"@/registry/futuredata/ui/skeleton\"\nimport { ProfileIdentity } from \"@/registry/futuredata/components/profile-identity\"\n\nfunction ProfileCard({\n  className,\n  layout = \"vertical\",\n  photo,\n  name,\n  bio,\n  seal = true,\n  stats,\n  following,\n  onFollowChange,\n  action,\n  loading = false,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"children\"> & {\n  layout?: \"vertical\" | \"horizontal\"\n  photo?: string\n  name: React.ReactNode\n  bio?: React.ReactNode\n  seal?: boolean | React.ReactNode\n  /** <StatItem/>s (Figma Show Stats). */\n  stats?: React.ReactNode\n  /** Estado do botão seguir; omita para esconder (Figma Show Action). */\n  following?: boolean\n  onFollowChange?: (following: boolean) => void\n  /** Ação customizada no lugar do seguir. */\n  action?: React.ReactNode\n  loading?: boolean\n}) {\n  const vertical = layout === \"vertical\"\n  const followButton =\n    action ??\n    (following === undefined ? null : following ? (\n      <Button variant=\"outline\" size=\"sm\" onClick={() => onFollowChange?.(false)}>\n        Seguindo\n        <CheckIcon data-icon=\"inline-end\" />\n      </Button>\n    ) : (\n      <Button variant=\"soft\" size=\"sm\" onClick={() => onFollowChange?.(true)}>\n        Seguir\n        <PlusIcon data-icon=\"inline-end\" />\n      </Button>\n    ))\n  return (\n    <div\n      data-slot=\"profile-card\"\n      data-layout={layout}\n      aria-busy={loading || undefined}\n      className={cn(\n        \"flex rounded-card border border-border bg-card p-2 transition-shadow hover:shadow-md\",\n        vertical ? \"w-80 flex-col\" : \"w-full max-w-[520px] flex-row gap-3\",\n        className\n      )}\n      {...props}\n    >\n      <Image\n        ratio={vertical ? \"4:3\" : \"1:1\"}\n        src={loading ? undefined : photo}\n        alt=\"\"\n        className={cn(!vertical && \"w-26 shrink-0\")}\n      />\n      <div className={cn(\"flex min-w-0 flex-1 flex-col gap-3\", vertical ? \"px-3 pt-4 pb-1\" : \"p-1\")}>\n        {loading ? (\n          <>\n            <Skeleton className=\"h-5 w-36\" />\n            <Skeleton className=\"h-3 w-full\" />\n            <Skeleton className=\"h-3 w-48\" />\n            <div className=\"flex items-center gap-3\">\n              <Skeleton className=\"h-4 w-10\" />\n              <Skeleton className=\"h-4 w-10\" />\n              <span className=\"flex-1\" />\n              <Skeleton className=\"h-9 w-22\" />\n            </div>\n          </>\n        ) : (\n          <>\n            <ProfileIdentity name={name} bio={bio} seal={seal} size={vertical ? \"lg\" : \"sm\"} />\n            {(stats || followButton) && (\n              <div className=\"flex items-center gap-4\">\n                {stats}\n                <span className=\"flex-1\" />\n                {followButton}\n              </div>\n            )}\n          </>\n        )}\n      </div>\n    </div>\n  )\n}\n\nexport { ProfileCard }\n",
+      "type": "registry:component",
+      "target": "components/profile-card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

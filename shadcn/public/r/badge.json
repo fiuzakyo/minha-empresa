@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "Figma: Badge",
+  "dependencies": [
+    "radix-ui@^1.4.3",
+    "class-variance-authority@^0.7.1"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/badge.tsx",
+      "content": "/**\n * Badge — Voltron Design System (Figma: 01 · Atoms › Badge)\n *\n * shadcn/ui nativo (default | secondary | destructive | outline | ghost | link)\n * + extensão Voltron (success | warning | info).\n * Anatomia: rounded-full, px-2 py-0.5, gap-1, text-xs font-medium; ícone 12px (size-3)\n * marcado com data-icon=\"inline-start\".\n */\nimport * as React from \"react\"\nimport { Slot } from \"radix-ui\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst badgeVariants = cva(\n  [\n    \"inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-full border border-transparent px-2 py-0.5 text-xs font-medium\",\n    \"transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:ring-ring/50 outline-none\",\n    \"[&>svg]:pointer-events-none [&>svg]:size-3\",\n  ],\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground [a&]:hover:bg-primary/90\",\n        secondary: \"bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90\",\n        destructive: \"bg-destructive text-primary-foreground [a&]:hover:bg-destructive/90\",\n        outline: \"border-border text-foreground [a&]:hover:bg-accent\",\n        ghost: \"text-foreground [a&]:hover:bg-accent\",\n        link: \"text-primary underline-offset-4 [a&]:hover:underline\",\n        success: \"bg-success text-success-foreground [a&]:hover:bg-success/90\",\n        warning: \"bg-warning text-warning-foreground [a&]:hover:bg-warning/90\",\n        info: \"bg-info text-info-foreground [a&]:hover:bg-info/90\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nfunction Badge({\n  className,\n  variant = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"span\"\n\n  return (\n    <Comp\n      data-slot=\"badge\"\n      data-variant={variant}\n      className={cn(badgeVariants({ variant }), className)}\n      {...props}\n    />\n  )\n}\n\nexport { Badge, badgeVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

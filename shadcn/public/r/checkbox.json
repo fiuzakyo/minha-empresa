@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "Figma: Checkbox",
+  "dependencies": [
+    "radix-ui@^1.4.3",
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/checkbox.tsx",
+      "content": "/**\n * Checkbox — Voltron Design System (Figma: 01 · Atoms › Checkbox)\n *\n * shadcn/ui nativo (Radix). checked={false | true | \"indeterminate\"} (ícones Check e Minus).\n * Focus → anel --ring 50% · Disabled → 50% · Invalid → aria-invalid (--destructive).\n */\nimport * as React from \"react\"\nimport { Checkbox as CheckboxPrimitive } from \"radix-ui\"\nimport { CheckIcon, MinusIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Checkbox({ className, ...props }: React.ComponentProps<typeof CheckboxPrimitive.Root>) {\n  return (\n    <CheckboxPrimitive.Root\n      data-slot=\"checkbox\"\n      className={cn(\n        \"peer group/checkbox size-4 shrink-0 cursor-pointer rounded-control border border-input bg-card text-primary-foreground shadow-xs outline-none\",\n        \"transition-[background-color,border-color,box-shadow]\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        \"data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=indeterminate]:border-primary data-[state=indeterminate]:bg-primary\",\n        \"aria-invalid:border-destructive aria-invalid:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:data-[state=checked]:bg-destructive aria-invalid:data-[state=indeterminate]:bg-destructive\",\n        \"disabled:cursor-not-allowed disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    >\n      <CheckboxPrimitive.Indicator\n        data-slot=\"checkbox-indicator\"\n        className=\"grid place-content-center text-current\"\n      >\n        <CheckIcon weight=\"bold\" className=\"size-3.5 group-data-[state=indeterminate]/checkbox:hidden\" />\n        <MinusIcon weight=\"bold\" className=\"hidden size-3.5 group-data-[state=indeterminate]/checkbox:block\" />\n      </CheckboxPrimitive.Indicator>\n    </CheckboxPrimitive.Root>\n  )\n}\n\nexport { Checkbox }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

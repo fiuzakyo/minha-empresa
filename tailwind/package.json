@@ -1,0 +1,41 @@
+{
+  "name": "@futuredata/ui-tailwind",
+  "version": "0.0.0",
+  "description": "Componentes React do Voltron Design System estilizados com Tailwind CSS v4 (mesmo código do registro shadcn, empacotado como biblioteca)",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./styles.css"
+  },
+  "files": ["dist", "styles.css"],
+  "sideEffects": ["*.css"],
+  "scripts": {
+    "build": "node ../scripts/gen-index.mjs tailwind/src/index.ts && tsup"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "tailwindcss": "^4.1.0"
+  },
+  "dependencies": {
+    "@futuredata/tokens": "*",
+    "@phosphor-icons/react": "^2.1.10",
+    "@tanstack/react-table": "^8.21.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "input-otp": "^1.4.2",
+    "radix-ui": "^1.4.3",
+    "react-day-picker": "^9.11.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.3.1",
+    "tw-animate-css": "^1.4.0"
+  },
+  "publishConfig": { "access": "restricted" }
+}

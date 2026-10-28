@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "balance",
+  "title": "Balance",
+  "description": "Figma: Balance",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme",
+    "@futuredata/button"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/balance.tsx",
+      "content": "/**\n * Balance — Voltron Design System (Figma: 02 · Molecules › Balance)\n *\n * Saldo do usuário com ação de adicionar (Button Group: texto + Button default icon-lg \"+\").\n * - collapsed: versão compacta para a Sidebar recolhida (só valor + botão; o rótulo vai para o title)\n * Contêiner --card + --border, radius/button, Elevation/shadow-xs.\n */\nimport * as React from \"react\"\nimport { PlusIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/futuredata/ui/button\"\n\nfunction Balance({\n  className,\n  label = \"Saldo\",\n  value,\n  onAdd,\n  addLabel = \"Adicionar saldo\",\n  collapsed = false,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  label?: React.ReactNode\n  value: React.ReactNode\n  onAdd?: () => void\n  addLabel?: string\n  /** Versão compacta (Figma Mode=Collapsed). */\n  collapsed?: boolean\n}) {\n  return (\n    <div\n      data-slot=\"balance\"\n      data-collapsed={collapsed || undefined}\n      title={collapsed && typeof label === \"string\" ? label : undefined}\n      className={cn(\n        \"flex overflow-hidden rounded-button border border-border bg-card shadow-xs\",\n        collapsed ? \"w-12 flex-col\" : \"w-full\",\n        className\n      )}\n      {...props}\n    >\n      <div className={cn(\"flex min-w-0 flex-1 flex-col\", collapsed ? \"items-center px-0.5 py-1.5\" : \"px-4 py-2\")}>\n        {!collapsed && <span className=\"text-xs text-muted-foreground\">{label}</span>}\n        <span className={cn(\"truncate font-semibold text-foreground\", collapsed ? \"text-xs\" : \"text-lg\")}>{value}</span>\n      </div>\n      {onAdd && (\n        <Button\n          size=\"icon-lg\"\n          aria-label={addLabel}\n          onClick={onAdd}\n          className={cn(\"h-auto rounded-none shadow-none\", collapsed ? \"h-10 w-full\" : \"w-14 self-stretch\")}\n        >\n          <PlusIcon />\n        </Button>\n      )}\n    </div>\n  )\n}\n\nexport { Balance }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

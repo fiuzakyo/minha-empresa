@@ -1,0 +1,988 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "futuredata",
+  "homepage": "https://github.com/fiuzakyo/minha-empresa",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:file",
+      "title": "Tema Voltron",
+      "description": "Tokens de todas as marcas (Whitelabel, Detetive Auto, Verax), claro/escuro, ponte shadcn e tema do Tailwind v4. Importe styles/futuredata.css no globals.css.",
+      "dependencies": [
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/styles/futuredata.css",
+          "type": "registry:file",
+          "target": "styles/futuredata.css"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert / Banner",
+      "description": "Figma: Alert / Banner",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "announcement-badge",
+      "type": "registry:ui",
+      "title": "Announcement Badge",
+      "description": "Figma: Announcement Badge",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/announcement-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Image / Aspect Ratio",
+      "description": "Figma: Image",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment-chip",
+      "type": "registry:component",
+      "title": "Attachment Chip",
+      "description": "Figma: Attachment Chip",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button",
+        "@futuredata/key-icon",
+        "@futuredata/progress"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/ai/attachment-chip.tsx",
+          "type": "registry:component",
+          "target": "components/ai/attachment-chip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Figma: Avatar / Status, Avatar, Avatar / Portrait, Avatar Group, Avatar Group / Compact",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "class-variance-authority@^0.7.1",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Figma: Badge",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "balance",
+      "type": "registry:ui",
+      "title": "Balance",
+      "description": "Figma: Balance",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/balance.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Figma: Breadcrumb / Item, Breadcrumb",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Figma: Button",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Figma: Calendar / Day, Calendar, Date Picker",
+      "dependencies": [
+        "react-day-picker@^9.11.0",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Figma: Checkbox",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "Figma: Data Table",
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/checkbox",
+        "@futuredata/pagination",
+        "@futuredata/table"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Figma: Date Picker",
+      "dependencies": [
+        "react-day-picker@^9.11.0",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button",
+        "@futuredata/calendar",
+        "@futuredata/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Figma: Dropdown Menu / Item, Dropdown Menu / Account Item",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Figma: Field / Description, Field / Counter, Field / Text Input, Field / Textarea, Field / Checkbox, Field / Checkbox Card",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/checkbox",
+        "@futuredata/label"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "File Upload",
+      "description": "Figma: File Upload",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/key-icon",
+        "@futuredata/progress"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/file-upload.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Figma: Field / Text Input",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Figma: Input Group / Inline Edit",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "Figma: Input OTP / Slot",
+      "dependencies": [
+        "input-otp@^1.4.2",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "Figma: Item",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "key-icon",
+      "type": "registry:ui",
+      "title": "Key Icon",
+      "description": "Figma: Key Icon",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/key-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Figma: Label",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "model-selector",
+      "type": "registry:component",
+      "title": "Model Selector",
+      "description": "Figma: Model Selector",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/ai/model-selector.tsx",
+          "type": "registry:component",
+          "target": "components/ai/model-selector.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notification-item",
+      "type": "registry:component",
+      "title": "Notification Item",
+      "description": "Figma: Notifications / Item",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/notifications/notification-item.tsx",
+          "type": "registry:component",
+          "target": "components/notifications/notification-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notifications-panel",
+      "type": "registry:component",
+      "title": "Notifications Panel",
+      "description": "Figma: Notifications",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button",
+        "@futuredata/popover",
+        "@futuredata/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/notifications/notifications-panel.tsx",
+          "type": "registry:component",
+          "target": "components/notifications/notifications-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "Number Input",
+      "description": "Figma: Field / Number Input",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/number-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Figma: Pagination",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Figma: Date Picker, Notifications",
+      "dependencies": [
+        "radix-ui@^1.4.3"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "profile-card",
+      "type": "registry:component",
+      "title": "Profile Card",
+      "description": "Figma: Profile Card",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/aspect-ratio",
+        "@futuredata/button",
+        "@futuredata/skeleton",
+        "@futuredata/profile-identity"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/profile-card.tsx",
+          "type": "registry:component",
+          "target": "components/profile-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "profile-identity",
+      "type": "registry:component",
+      "title": "Profile Identity",
+      "description": "Figma: Profile Identity",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/profile-identity.tsx",
+          "type": "registry:component",
+          "target": "components/profile-identity.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Figma: Progress",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:ui",
+      "title": "Prompt Input",
+      "description": "Figma: Prompt Input",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/prompt-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "prompt-suggestion",
+      "type": "registry:component",
+      "title": "Prompt Suggestion",
+      "description": "Figma: Prompt Suggestion",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/ai/prompt-suggestion.tsx",
+          "type": "registry:component",
+          "target": "components/ai/prompt-suggestion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Figma: Separator",
+      "dependencies": [
+        "radix-ui@^1.4.3"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Figma: Sidebar / Group Label, Sidebar / Menu Button, Sidebar / Header, Sidebar / User, Sidebar",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "class-variance-authority@^0.7.1",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/button",
+        "@futuredata/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Figma: Profile Card",
+      "dependencies": [],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Figma: Toast",
+      "dependencies": [
+        "sonner@^2.0.7",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:component",
+      "title": "Stat Card",
+      "description": "Figma: Stat Card",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/stat-card.tsx",
+          "type": "registry:component",
+          "target": "components/stat-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-item",
+      "type": "registry:component",
+      "title": "Stat Item",
+      "description": "Figma: Stat Item",
+      "dependencies": [],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/stat-item.tsx",
+          "type": "registry:component",
+          "target": "components/stat-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:ui",
+      "title": "Status Badge",
+      "description": "Figma: Status Badge",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/status-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Figma: Switch",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Figma: Table / Head, Table / Cell, Table / Row",
+      "dependencies": [],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Figma: Tabs / Trigger, Tabs",
+      "dependencies": [
+        "radix-ui@^1.4.3",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tag",
+      "type": "registry:ui",
+      "title": "Tag",
+      "description": "Figma: Tag",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/tag.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:ui",
+      "title": "Tag Input",
+      "description": "Figma: Field / Tag Input",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/tag"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/tag-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "team-switcher",
+      "type": "registry:component",
+      "title": "Team Switcher",
+      "description": "Figma: Sidebar / Team Switcher",
+      "dependencies": [
+        "@phosphor-icons/react@^2.1.10"
+      ],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/avatar",
+        "@futuredata/button",
+        "@futuredata/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/components/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/team-switcher.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Figma: Field / Textarea",
+      "dependencies": [],
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/field"
+      ],
+      "files": [
+        {
+          "path": "registry/futuredata/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "all",
+      "type": "registry:block",
+      "title": "Voltron completo",
+      "description": "Instala o tema e todos os componentes do Voltron Design System.",
+      "registryDependencies": [
+        "@futuredata/theme",
+        "@futuredata/alert",
+        "@futuredata/announcement-badge",
+        "@futuredata/aspect-ratio",
+        "@futuredata/attachment-chip",
+        "@futuredata/avatar",
+        "@futuredata/badge",
+        "@futuredata/balance",
+        "@futuredata/breadcrumb",
+        "@futuredata/button",
+        "@futuredata/calendar",
+        "@futuredata/checkbox",
+        "@futuredata/data-table",
+        "@futuredata/date-picker",
+        "@futuredata/dropdown-menu",
+        "@futuredata/field",
+        "@futuredata/file-upload",
+        "@futuredata/input",
+        "@futuredata/input-group",
+        "@futuredata/input-otp",
+        "@futuredata/item",
+        "@futuredata/key-icon",
+        "@futuredata/label",
+        "@futuredata/model-selector",
+        "@futuredata/notification-item",
+        "@futuredata/notifications-panel",
+        "@futuredata/number-input",
+        "@futuredata/pagination",
+        "@futuredata/popover",
+        "@futuredata/profile-card",
+        "@futuredata/profile-identity",
+        "@futuredata/progress",
+        "@futuredata/prompt-input",
+        "@futuredata/prompt-suggestion",
+        "@futuredata/separator",
+        "@futuredata/sidebar",
+        "@futuredata/skeleton",
+        "@futuredata/sonner",
+        "@futuredata/stat-card",
+        "@futuredata/stat-item",
+        "@futuredata/status-badge",
+        "@futuredata/switch",
+        "@futuredata/table",
+        "@futuredata/tabs",
+        "@futuredata/tag",
+        "@futuredata/tag-input",
+        "@futuredata/team-switcher",
+        "@futuredata/textarea"
+      ],
+      "files": []
+    }
+  ]
+}

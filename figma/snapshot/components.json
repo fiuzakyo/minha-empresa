@@ -1,0 +1,1645 @@
+{
+  "components": {
+    "button": {
+      "name": "Button",
+      "page": "01 · Atoms",
+      "figmaId": "28:7176",
+      "key": "7b9a8d89cb8373640c3f135017fe7c45c06fd978",
+      "path": "Button",
+      "kind": "set",
+      "variants": 196,
+      "hash": "49b99aa1",
+      "props": {
+        "Label": "text:Button",
+        "Icon left": "bool:false",
+        "Icon right": "bool:false",
+        "Left icon": "INSTANCE_SWAP",
+        "Right icon": "INSTANCE_SWAP",
+        "Icon": "INSTANCE_SWAP",
+        "variant": [
+          "default",
+          "secondary",
+          "ghost",
+          "destructive",
+          "link",
+          "outline",
+          "soft"
+        ],
+        "size": [
+          "sm",
+          "default",
+          "lg",
+          "icon-sm",
+          "icon",
+          "icon-lg",
+          "icon-xs"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/button.tsx"
+      ]
+    },
+    "label": {
+      "name": "Label",
+      "page": "01 · Atoms",
+      "figmaId": "28:8198",
+      "key": "845a2bc25050ee9090b7d379fa8f18ca8158fd4f",
+      "path": "Label & Field Description",
+      "kind": "set",
+      "variants": 3,
+      "hash": "9931160b",
+      "props": {
+        "Label": "text:Label",
+        "Required": "bool:false",
+        "Optional": "bool:false",
+        "Info icon": "bool:false",
+        "State": [
+          "Default",
+          "Error",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/label.tsx"
+      ]
+    },
+    "field-description": {
+      "name": "Field / Description",
+      "page": "01 · Atoms",
+      "figmaId": "28:8217",
+      "key": "95a919f2073dfdd519e3d6c9aa701f4a265b866a",
+      "path": "Label & Field Description",
+      "kind": "set",
+      "variants": 8,
+      "hash": "ff8a5201",
+      "props": {
+        "Text": "text:Texto de apoio do campo.",
+        "Icon": "bool:true",
+        "Type": [
+          "Default",
+          "Error",
+          "Success",
+          "Warning"
+        ],
+        "State": [
+          "Default",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/field.tsx"
+      ]
+    },
+    "avatar-status": {
+      "name": "Avatar / Status",
+      "page": "01 · Atoms",
+      "figmaId": "28:8251",
+      "key": "2b99e6c16a4f5c39bf91913b473dad42a5ae60c6",
+      "path": "Avatar",
+      "kind": "set",
+      "variants": 12,
+      "hash": "f35abe2f",
+      "props": {
+        "Status": [
+          "Online",
+          "Away",
+          "Busy",
+          "Offline"
+        ],
+        "Size": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "files": [
+        "ui/avatar.tsx"
+      ]
+    },
+    "avatar": {
+      "name": "Avatar",
+      "page": "01 · Atoms",
+      "figmaId": "28:8264",
+      "key": "d00f20471cc0db5df513a938cd3e69e7f02cea69",
+      "path": "Avatar",
+      "kind": "set",
+      "variants": 10,
+      "hash": "b249bf6b",
+      "props": {
+        "Initials": "text:MD",
+        "Status": "bool:false",
+        "Size": [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ],
+        "Content": [
+          "Image",
+          "Fallback"
+        ]
+      },
+      "files": [
+        "ui/avatar.tsx"
+      ]
+    },
+    "avatar-portrait": {
+      "name": "Avatar / Portrait",
+      "page": "01 · Atoms",
+      "figmaId": "28:8305",
+      "key": "8145fd87d92e966950104636465241d194bd3481",
+      "path": "Avatar",
+      "kind": "set",
+      "variants": 6,
+      "hash": "183ca4a6",
+      "props": {
+        "Initials": "text:MD",
+        "Status": "bool:false",
+        "Size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "Content": [
+          "Image",
+          "Fallback"
+        ]
+      },
+      "files": [
+        "ui/avatar.tsx"
+      ]
+    },
+    "checkbox": {
+      "name": "Checkbox",
+      "page": "01 · Atoms",
+      "figmaId": "28:8331",
+      "key": "96532760ac6b31c97fd4e01c474f16c4e7095b5e",
+      "path": "Checkbox & Switch",
+      "kind": "set",
+      "variants": 12,
+      "hash": "0d25deb1",
+      "props": {
+        "Checked": [
+          "Off",
+          "On",
+          "Indeterminate"
+        ],
+        "State": [
+          "Default",
+          "Focus",
+          "Disabled",
+          "Invalid"
+        ]
+      },
+      "files": [
+        "ui/checkbox.tsx"
+      ]
+    },
+    "switch": {
+      "name": "Switch",
+      "page": "01 · Atoms",
+      "figmaId": "28:8368",
+      "key": "780ea64207785aeb9a1425b826928501b0f22a87",
+      "path": "Checkbox & Switch",
+      "kind": "set",
+      "variants": 32,
+      "hash": "19223eeb",
+      "props": {
+        "Icon off": "INSTANCE_SWAP",
+        "Icon on": "INSTANCE_SWAP",
+        "Type": [
+          "Default",
+          "Icon"
+        ],
+        "Size": [
+          "sm",
+          "md"
+        ],
+        "Checked": [
+          "Off",
+          "On"
+        ],
+        "State": [
+          "Default",
+          "Pressed",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/switch.tsx"
+      ]
+    },
+    "announcement-badge": {
+      "name": "Announcement Badge",
+      "page": "01 · Atoms",
+      "figmaId": "28:8498",
+      "key": "ccb2c801d670be434cbc3b217e805120a5c1ae99",
+      "path": "Announcement Badge & Status Badge",
+      "kind": "set",
+      "variants": 18,
+      "hash": "fe9e523c",
+      "props": {
+        "Text": "text:39+ atualizações disponíveis",
+        "Link text": "text:Explorar",
+        "Icon": "INSTANCE_SWAP",
+        "Type": [
+          "Icon",
+          "Action",
+          "Split"
+        ],
+        "Tone": [
+          "Neutral",
+          "Brand"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Focus"
+        ]
+      },
+      "files": [
+        "ui/announcement-badge.tsx"
+      ]
+    },
+    "status-badge": {
+      "name": "Status Badge",
+      "page": "01 · Atoms",
+      "figmaId": "28:8619",
+      "key": "f7ca1aeccdec5fd8e545bd44fed845e0b77c823e",
+      "path": "Announcement Badge & Status Badge",
+      "kind": "set",
+      "variants": 15,
+      "hash": "c72390b7",
+      "props": {
+        "Text": "text:100+ seções adicionadas",
+        "Action": "bool:true",
+        "Action text": "text:Ver novidades",
+        "Status": [
+          "Neutral",
+          "Success",
+          "Warning",
+          "Error",
+          "Brand"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Focus"
+        ]
+      },
+      "files": [
+        "ui/status-badge.tsx"
+      ]
+    },
+    "tag": {
+      "name": "Tag",
+      "page": "01 · Atoms",
+      "figmaId": "28:8726",
+      "key": "853fd0ea4788ad92777bb3ce8670b094b0814e18",
+      "path": "Tag",
+      "kind": "set",
+      "variants": 40,
+      "hash": "30850bdb",
+      "props": {
+        "Text": "text:Etiqueta",
+        "Leading": "bool:false",
+        "Icon": "INSTANCE_SWAP",
+        "Removable": "bool:true",
+        "Tone": [
+          "Neutral",
+          "Brand",
+          "Success",
+          "Warning",
+          "Error"
+        ],
+        "Size": [
+          "sm",
+          "md"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/tag.tsx"
+      ]
+    },
+    "key-icon": {
+      "name": "Key Icon",
+      "page": "01 · Atoms",
+      "figmaId": "28:8928",
+      "key": "8487abc1744e0ff6b44d23e8202412f1ae6508be",
+      "path": "Key Icon",
+      "kind": "set",
+      "variants": 40,
+      "hash": "be27f9a3",
+      "props": {
+        "Icon": "INSTANCE_SWAP",
+        "Tone": [
+          "Neutral",
+          "Brand",
+          "Success",
+          "Warning",
+          "Error"
+        ],
+        "Style": [
+          "Subtle",
+          "Solid"
+        ],
+        "Size": [
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ]
+      },
+      "files": [
+        "ui/key-icon.tsx"
+      ]
+    },
+    "field-counter": {
+      "name": "Field / Counter",
+      "page": "01 · Atoms",
+      "figmaId": "28:9010",
+      "key": "9c8471c6e6df98c88c26ea70a36aa08b3f7b2105",
+      "path": "Field Counter & Progress",
+      "kind": "set",
+      "variants": 3,
+      "hash": "f7e86349",
+      "props": {
+        "Count": "text:48/200",
+        "State": [
+          "Default",
+          "Near limit",
+          "Over limit"
+        ]
+      },
+      "files": [
+        "ui/field.tsx"
+      ]
+    },
+    "progress": {
+      "name": "Progress",
+      "page": "01 · Atoms",
+      "figmaId": "28:9017",
+      "key": "98fbb08d91d69de8759b052279ee9eb0901c60ba",
+      "path": "Field Counter & Progress",
+      "kind": "set",
+      "variants": 40,
+      "hash": "a9836a16",
+      "props": {
+        "Label": "bool:false",
+        "Label text": "text:Enviando arquivo.pdf",
+        "Tone": [
+          "Brand",
+          "Success",
+          "Warning",
+          "Error"
+        ],
+        "Size": [
+          "sm",
+          "md"
+        ],
+        "Value": [
+          "0",
+          "25",
+          "50",
+          "75",
+          "100"
+        ]
+      },
+      "files": [
+        "ui/progress.tsx"
+      ]
+    },
+    "calendar-day": {
+      "name": "Calendar / Day",
+      "page": "01 · Atoms",
+      "figmaId": "28:9259",
+      "key": "19bafaf576779e245d49b1b09b0192ae3b5afa97",
+      "path": "Calendar Day",
+      "kind": "set",
+      "variants": 20,
+      "hash": "3daf5228",
+      "props": {
+        "Day": "text:15",
+        "Event": "bool:false",
+        "Size": [
+          "sm",
+          "md"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Today",
+          "Selected",
+          "Range start",
+          "Range middle",
+          "Range end",
+          "Outside",
+          "Disabled",
+          "Focus"
+        ]
+      },
+      "files": [
+        "ui/calendar.tsx"
+      ]
+    },
+    "badge": {
+      "name": "Badge",
+      "page": "01 · Atoms",
+      "figmaId": "40:5412",
+      "key": "62452a67896cfe4fb76ec32e47b18d48d9a367b2",
+      "path": "Badge",
+      "kind": "set",
+      "variants": 9,
+      "hash": "c0fac4ae",
+      "props": {
+        "Text": "text:Badge",
+        "Icon": "bool:false",
+        "Icon glyph": "INSTANCE_SWAP",
+        "variant": [
+          "default",
+          "secondary",
+          "destructive",
+          "outline",
+          "ghost",
+          "link",
+          "success",
+          "warning",
+          "info"
+        ]
+      },
+      "files": [
+        "ui/badge.tsx"
+      ]
+    },
+    "input-otp-slot": {
+      "name": "Input OTP / Slot",
+      "page": "01 · Atoms",
+      "figmaId": "55:10695",
+      "key": "c9f6453fae29ac074faeb177cf9c13033ba968be",
+      "path": "Input OTP / Slot",
+      "kind": "set",
+      "variants": 6,
+      "hash": "ef2a19e5",
+      "props": {
+        "Digit": "text:0",
+        "State": [
+          "Placeholder",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Disabled",
+          "Error"
+        ]
+      },
+      "files": [
+        "ui/input-otp.tsx"
+      ]
+    },
+    "sidebar-group-label": {
+      "name": "Sidebar / Group Label",
+      "page": "01 · Atoms",
+      "figmaId": "55:11734",
+      "key": "a5679bfb359f61de3b54367640b7980661868414",
+      "path": "Sidebar / Group Label",
+      "kind": "set",
+      "variants": 2,
+      "hash": "17b854ac",
+      "props": {
+        "Label": "text:Grupo",
+        "Mode": [
+          "Expanded",
+          "Collapsed"
+        ]
+      },
+      "files": [
+        "ui/sidebar.tsx"
+      ]
+    },
+    "breadcrumb-item": {
+      "name": "Breadcrumb / Item",
+      "page": "01 · Atoms",
+      "figmaId": "55:11750",
+      "key": "94e5a2c7831b7c87ab592a05c90afef8c1bacd98",
+      "path": "Breadcrumb / Item",
+      "kind": "set",
+      "variants": 9,
+      "hash": "1812567d",
+      "props": {
+        "Label": "text:Clientes",
+        "Type": [
+          "Home",
+          "Link",
+          "Ellipsis"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Active"
+        ]
+      },
+      "files": [
+        "ui/breadcrumb.tsx"
+      ]
+    },
+    "separator": {
+      "name": "Separator",
+      "page": "01 · Atoms",
+      "figmaId": "95:7720",
+      "key": "8196965073ea3788e4668d945a43da2da7f9ffa2",
+      "path": "Separator",
+      "kind": "set",
+      "variants": 2,
+      "hash": "4f93f110",
+      "props": {
+        "orientation": [
+          "horizontal",
+          "vertical"
+        ]
+      },
+      "files": [
+        "ui/separator.tsx"
+      ]
+    },
+    "tabs-trigger": {
+      "name": "Tabs / Trigger",
+      "page": "01 · Atoms",
+      "figmaId": "109:8028",
+      "key": "59fa4f3c85b453edb5bf8218efc1c5cfe836169e",
+      "path": "Tabs / Trigger",
+      "kind": "set",
+      "variants": 20,
+      "hash": "f313bfe7",
+      "props": {
+        "Label": "text:Aba",
+        "Icon": "bool:false",
+        "Icon swap": "INSTANCE_SWAP",
+        "Count": "bool:false",
+        "Style": [
+          "Pill",
+          "Pill Rounded",
+          "Underline",
+          "Folder",
+          "Folder Highlighted"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Active",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/tabs.tsx"
+      ]
+    },
+    "image": {
+      "name": "Image",
+      "page": "01 · Atoms",
+      "figmaId": "131:35874",
+      "key": "4966df14111404a67a2b36e53d183ab86b48f57a",
+      "path": "Image",
+      "kind": "set",
+      "variants": 8,
+      "hash": "0b53ce07",
+      "props": {
+        "Ratio": [
+          "1:1",
+          "4:3",
+          "3:4",
+          "16:9"
+        ],
+        "Content": [
+          "Image",
+          "Placeholder"
+        ]
+      },
+      "files": [
+        "ui/aspect-ratio.tsx"
+      ]
+    },
+    "field-text-input": {
+      "name": "Field / Text Input",
+      "page": "02 · Molecules",
+      "figmaId": "55:10422",
+      "key": "d70790139b2488fc986fe03dc51b3fef97fec69b",
+      "path": "Field / Text Input",
+      "kind": "set",
+      "variants": 75,
+      "hash": "02cbfd45",
+      "props": {
+        "Label": "text:Label",
+        "Value": "text:Valor",
+        "Hint": "bool:true",
+        "Currency": "text:BRL",
+        "Flag": "INSTANCE_SWAP",
+        "Card brand": "INSTANCE_SWAP",
+        "Prefix": "text:R$",
+        "Type": [
+          "Basic",
+          "Select",
+          "Phone",
+          "Amount",
+          "Card"
+        ],
+        "State": [
+          "Empty",
+          "Focus",
+          "Filled",
+          "Error",
+          "Disabled"
+        ],
+        "Size": [
+          "Medium",
+          "Small",
+          "X-Small"
+        ]
+      },
+      "files": [
+        "ui/field.tsx",
+        "ui/input.tsx"
+      ]
+    },
+    "input-group-inline-edit": {
+      "name": "Input Group / Inline Edit",
+      "page": "02 · Molecules",
+      "figmaId": "55:10669",
+      "key": "3d56275bd017797e80e653b1bcf1369bbdd6f107",
+      "path": "Input Group, Number Input & Tag Input",
+      "kind": "set",
+      "variants": 6,
+      "hash": "19ad794a",
+      "props": {
+        "Button": "bool:true",
+        "Left Icon": "bool:true",
+        "Value": "text:Digite um valor…",
+        "State": [
+          "Placeholder",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Disabled",
+          "Error"
+        ]
+      },
+      "files": [
+        "ui/input-group.tsx"
+      ]
+    },
+    "field-number-input": {
+      "name": "Field / Number Input",
+      "page": "02 · Molecules",
+      "figmaId": "55:10709",
+      "key": "e45af28c57b95c19d98960303dbde9129cdc79a3",
+      "path": "Input Group, Number Input & Tag Input",
+      "kind": "set",
+      "variants": 18,
+      "hash": "40c48853",
+      "props": {
+        "Label": "bool:true",
+        "Hint": "bool:true",
+        "Size": [
+          "Medium",
+          "Small",
+          "X-Small"
+        ],
+        "State": [
+          "Placeholder",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Disabled",
+          "Error"
+        ]
+      },
+      "files": [
+        "ui/number-input.tsx"
+      ]
+    },
+    "field-tag-input": {
+      "name": "Field / Tag Input",
+      "page": "02 · Molecules",
+      "figmaId": "55:10839",
+      "key": "aa350369121a3f9e0aa4f13d4fcdce7272e76aaf",
+      "path": "Input Group, Number Input & Tag Input",
+      "kind": "set",
+      "variants": 18,
+      "hash": "e8af0f9e",
+      "props": {
+        "Label": "bool:true",
+        "Hint": "bool:true",
+        "Right Icon": "bool:true",
+        "Size": [
+          "Medium",
+          "Small",
+          "X-Small"
+        ],
+        "State": [
+          "Placeholder",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Disabled",
+          "Error"
+        ]
+      },
+      "files": [
+        "ui/tag-input.tsx"
+      ]
+    },
+    "field-textarea": {
+      "name": "Field / Textarea",
+      "page": "02 · Molecules",
+      "figmaId": "55:10988",
+      "key": "d8a82e23d226cadb0548d4acc4b6143bd1b9bfde",
+      "path": "Textarea & File Upload",
+      "kind": "set",
+      "variants": 6,
+      "hash": "e5a5ef19",
+      "props": {
+        "Hint": "bool:true",
+        "Counter": "bool:true",
+        "Label": "text:Observações",
+        "Value": "text:Cliente pediu revisão do contrato antes da assinatura. Retornar o contato em até 15 dias.",
+        "State": [
+          "Placeholder",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Disabled",
+          "Error"
+        ]
+      },
+      "files": [
+        "ui/textarea.tsx",
+        "ui/field.tsx"
+      ]
+    },
+    "file-upload": {
+      "name": "File Upload",
+      "page": "02 · Molecules",
+      "figmaId": "55:11050",
+      "key": "37c0ba036bebd793a037e0cbefbb5cd2ba02376b",
+      "path": "Textarea & File Upload",
+      "kind": "set",
+      "variants": 12,
+      "hash": "82fe4b11",
+      "props": {
+        "Required": "bool:true",
+        "Action": [
+          "Empty",
+          "Uploading",
+          "Uploaded",
+          "Downloading",
+          "Failed",
+          "Preview"
+        ],
+        "State": [
+          "Default",
+          "Hover"
+        ]
+      },
+      "files": [
+        "ui/file-upload.tsx"
+      ]
+    },
+    "field-checkbox": {
+      "name": "Field / Checkbox",
+      "page": "02 · Molecules",
+      "figmaId": "55:11170",
+      "key": "1ff83caf21706fcb03f577963c2c78c88bd6223d",
+      "path": "Field / Checkbox & Avatar Group",
+      "kind": "set",
+      "variants": 8,
+      "hash": "c3979fe0",
+      "props": {
+        "Label": "text:Label",
+        "Sublabel": "bool:true",
+        "Sublabel Text": "text:(Sublabel)",
+        "Badge": "bool:true",
+        "Description Text": "text:Insira aqui a descrição do checkbox.",
+        "Link Button": "bool:true",
+        "Checked": [
+          "Off",
+          "On"
+        ],
+        "Description": [
+          "On",
+          "Off"
+        ],
+        "Flip": [
+          "Off",
+          "On"
+        ]
+      },
+      "files": [
+        "ui/field.tsx"
+      ]
+    },
+    "avatar-group": {
+      "name": "Avatar Group",
+      "page": "02 · Molecules",
+      "figmaId": "55:11251",
+      "key": "c7678d30f235d5904d10bb4029e6b36d5df696a8",
+      "path": "Field / Checkbox & Avatar Group",
+      "kind": "set",
+      "variants": 5,
+      "hash": "2c2e941f",
+      "props": {
+        "Count": "text:+3",
+        "Show More": "bool:true",
+        "Size": [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ]
+      },
+      "files": [
+        "ui/avatar.tsx"
+      ]
+    },
+    "avatar-group-compact": {
+      "name": "Avatar Group / Compact",
+      "page": "02 · Molecules",
+      "figmaId": "55:11312",
+      "key": "5466c9d1e55a3acc7b66042f10603938df90ab3d",
+      "path": "Field / Checkbox & Avatar Group",
+      "kind": "set",
+      "variants": 6,
+      "hash": "e55d55b5",
+      "props": {
+        "Count": "text:+12",
+        "Style": [
+          "Default",
+          "Stroke"
+        ],
+        "Size": [
+          "xs",
+          "sm",
+          "md"
+        ]
+      },
+      "files": [
+        "ui/avatar.tsx"
+      ]
+    },
+    "alert-banner": {
+      "name": "Alert / Banner",
+      "page": "02 · Molecules",
+      "figmaId": "55:11368",
+      "key": "f8ecc1a0dac1c0d0d26a1d5c211a3028f75fea36",
+      "path": "Alert / Banner & Toast",
+      "kind": "set",
+      "variants": 5,
+      "hash": "3a080d40",
+      "props": {
+        "Title": "text:Insira o título do alerta",
+        "Description Text": "text:Insira a descrição aqui.",
+        "Description": "bool:true",
+        "Left Icon": "bool:true",
+        "Link Button": "bool:true",
+        "Dismiss": "bool:true",
+        "Status": [
+          "Error",
+          "Warning",
+          "Success",
+          "Information",
+          "Feature"
+        ]
+      },
+      "files": [
+        "ui/alert.tsx"
+      ]
+    },
+    "toast": {
+      "name": "Toast",
+      "page": "02 · Molecules",
+      "figmaId": "55:11414",
+      "key": "3e48aff718c8d67810ea438dcb0d0dea2a374a77",
+      "path": "Alert / Banner & Toast",
+      "kind": "set",
+      "variants": 15,
+      "hash": "39696899",
+      "props": {
+        "Title": "text:Insira o título do alerta",
+        "Left Icon": "bool:true",
+        "Link Button": "bool:true",
+        "Double Link": "bool:true",
+        "Dismiss": "bool:true",
+        "Description Text": "text:Insira a descrição do alerta aqui. Fica melhor com até duas linhas de texto.",
+        "Status": [
+          "Error",
+          "Warning",
+          "Success",
+          "Information",
+          "Feature"
+        ],
+        "Size": [
+          "X-Small",
+          "Small",
+          "Large"
+        ]
+      },
+      "files": [
+        "ui/sonner.tsx"
+      ]
+    },
+    "calendar": {
+      "name": "Calendar",
+      "page": "02 · Molecules",
+      "figmaId": "55:11526",
+      "key": "49264dee25e11095e5f3aa80ea27ed29d693e4b7",
+      "path": "Calendar & Pagination",
+      "kind": "set",
+      "variants": 2,
+      "hash": "0f95401c",
+      "props": {
+        "Month": "text:Outubro 2026",
+        "Size": [
+          "sm",
+          "md"
+        ]
+      },
+      "files": [
+        "ui/calendar.tsx"
+      ]
+    },
+    "pagination": {
+      "name": "Pagination",
+      "page": "02 · Molecules",
+      "figmaId": "59:6989",
+      "key": "d1709fd25b260230113ade165c0d800fe9cb05de",
+      "path": "Calendar & Pagination",
+      "kind": "component",
+      "variants": 1,
+      "hash": "2168c529",
+      "props": {
+        "Total": "text:2.077",
+        "Page size": "text:10",
+        "Page size selector": "bool:true"
+      },
+      "files": [
+        "ui/pagination.tsx"
+      ]
+    },
+    "table-head": {
+      "name": "Table / Head",
+      "page": "02 · Molecules",
+      "figmaId": "59:7044",
+      "key": "5fbbce870e9722d16ac07636a233031393a505c0",
+      "path": "Table",
+      "kind": "component",
+      "variants": 1,
+      "hash": "d4f18c18",
+      "props": {
+        "Label": "text:Coluna",
+        "Select": "bool:false",
+        "Menu": "bool:true",
+        "Divider": "bool:true"
+      },
+      "files": [
+        "ui/table.tsx"
+      ]
+    },
+    "table-cell": {
+      "name": "Table / Cell",
+      "page": "02 · Molecules",
+      "figmaId": "55:11675",
+      "key": "f918ad03036d225eebaeefb4d5411b7047cea1e7",
+      "path": "Table",
+      "kind": "set",
+      "variants": 6,
+      "hash": "20fb0b76",
+      "props": {
+        "Text": "text:Valor",
+        "Description": "text:Descrição",
+        "Select": "bool:false",
+        "Type": [
+          "Text",
+          "Muted Text",
+          "Text + Description",
+          "Avatar",
+          "Status",
+          "Menu"
+        ]
+      },
+      "files": [
+        "ui/table.tsx"
+      ]
+    },
+    "sidebar-menu-button": {
+      "name": "Sidebar / Menu Button",
+      "page": "02 · Molecules",
+      "figmaId": "55:11697",
+      "key": "92288da60bcc2cf8668255e06ed6fd4f428b09cd",
+      "path": "Sidebar",
+      "kind": "set",
+      "variants": 12,
+      "hash": "d7a4adfe",
+      "props": {
+        "Label": "text:Item",
+        "Icon": "INSTANCE_SWAP",
+        "Badge": "bool:false",
+        "Chevron": "bool:false",
+        "Mode": [
+          "Expanded",
+          "Collapsed"
+        ],
+        "Type": [
+          "Item",
+          "Sub-item"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Active",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/sidebar.tsx"
+      ]
+    },
+    "sidebar-header": {
+      "name": "Sidebar / Header",
+      "page": "02 · Molecules",
+      "figmaId": "55:11739",
+      "key": "0a445d61e599b433a467987a700c1ac1c4494f71",
+      "path": "Sidebar",
+      "kind": "set",
+      "variants": 2,
+      "hash": "f4f4a1b9",
+      "props": {
+        "Name": "text:Empresa Exemplo",
+        "Description": "text:Plano Pro · 12 usuários",
+        "Mode": [
+          "Expanded",
+          "Collapsed"
+        ]
+      },
+      "files": [
+        "ui/sidebar.tsx"
+      ]
+    },
+    "breadcrumb": {
+      "name": "Breadcrumb",
+      "page": "02 · Molecules",
+      "figmaId": "55:11769",
+      "key": "963ad59c072ac7981e895fb3e7ee9587a3164b8e",
+      "path": "Breadcrumb & Dropdown Menu / Item",
+      "kind": "set",
+      "variants": 5,
+      "hash": "59a85306",
+      "props": {
+        "Levels": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "Collapsed"
+        ]
+      },
+      "files": [
+        "ui/breadcrumb.tsx"
+      ]
+    },
+    "dropdown-menu-item": {
+      "name": "Dropdown Menu / Item",
+      "page": "02 · Molecules",
+      "figmaId": "55:11800",
+      "key": "a74663dd8fe3300fa178b787783e99f14bd2211c",
+      "path": "Breadcrumb & Dropdown Menu / Item",
+      "kind": "set",
+      "variants": 3,
+      "hash": "681f169f",
+      "props": {
+        "Badge": "bool:false",
+        "Label": "text:Item",
+        "Icon": "bool:false",
+        "Icon swap": "INSTANCE_SWAP",
+        "Shortcut": "bool:false",
+        "Shortcut text": "text:⌘K",
+        "State": [
+          "Default",
+          "Hover",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/dropdown-menu.tsx"
+      ]
+    },
+    "field-checkbox-card": {
+      "name": "Field / Checkbox Card",
+      "page": "02 · Molecules",
+      "figmaId": "74:13353",
+      "key": "976734e9d8638e98d8709a353dbad3985c46b5e8",
+      "path": "Field / Checkbox Card",
+      "kind": "set",
+      "variants": 24,
+      "hash": "a2c1df28",
+      "props": {
+        "Label": "text:Label",
+        "Sublabel": "bool:true",
+        "Sublabel Text": "text:(Sublabel)",
+        "Badge": "bool:true",
+        "Description": "text:Insira aqui a descrição do checkbox.",
+        "Type": [
+          "Basic",
+          "Left Icon",
+          "Avatar",
+          "Card Provider",
+          "Brand",
+          "Company"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Active",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/field.tsx"
+      ]
+    },
+    "balance": {
+      "name": "Balance",
+      "page": "02 · Molecules",
+      "figmaId": "98:11712",
+      "key": "49f192c3bb84b12fd8ec7f8f3fde221a26bdcc0f",
+      "path": "Sidebar · Balance, User & Account Item",
+      "kind": "set",
+      "variants": 2,
+      "hash": "93c75494",
+      "props": {
+        "Label": "text:Saldo",
+        "Value": "text:R$ 64",
+        "Mode": [
+          "Expanded",
+          "Collapsed"
+        ]
+      },
+      "files": [
+        "ui/balance.tsx"
+      ]
+    },
+    "sidebar-user": {
+      "name": "Sidebar / User",
+      "page": "02 · Molecules",
+      "figmaId": "98:11713",
+      "key": "650f9f418be2e1107bbf19017f7070b231f7f2ca",
+      "path": "Sidebar · Balance, User & Account Item",
+      "kind": "set",
+      "variants": 2,
+      "hash": "7f73dec2",
+      "props": {
+        "Name": "text:Usuário Exemplo",
+        "Email": "text:usuario@exemplo.com",
+        "Chevron": "bool:true",
+        "Mode": [
+          "Expanded",
+          "Collapsed"
+        ]
+      },
+      "files": [
+        "ui/sidebar.tsx"
+      ]
+    },
+    "dropdown-menu-account-item": {
+      "name": "Dropdown Menu / Account Item",
+      "page": "02 · Molecules",
+      "figmaId": "98:11714",
+      "key": "e6bbc043f64fd83a67fb53a883bef3faec5b37ac",
+      "path": "Sidebar · Balance, User & Account Item",
+      "kind": "set",
+      "variants": 3,
+      "hash": "84459550",
+      "props": {
+        "Name": "text:Empresa Exemplo",
+        "Description": "text:contato@exemplo.com",
+        "State": [
+          "Default",
+          "Hover",
+          "Selected"
+        ]
+      },
+      "files": [
+        "ui/dropdown-menu.tsx"
+      ]
+    },
+    "tabs": {
+      "name": "Tabs",
+      "page": "02 · Molecules",
+      "figmaId": "107:21481",
+      "key": "97079065337b5560d38891bc3f50bb638b48770e",
+      "path": "Tabs",
+      "kind": "set",
+      "variants": 8,
+      "hash": "75ade9e4",
+      "props": {
+        "Style": [
+          "Pills",
+          "Pills Elevated",
+          "Pills Rounded",
+          "Underline",
+          "Underline Floating",
+          "Folders",
+          "Folders Highlighted",
+          "Pills Elevated Rounded"
+        ]
+      },
+      "files": [
+        "ui/tabs.tsx"
+      ]
+    },
+    "notifications-item": {
+      "name": "Notifications / Item",
+      "page": "02 · Molecules",
+      "figmaId": "113:12513",
+      "key": "c3347464cce8dc6c106058e6084f74cc7d3bc0df",
+      "path": "Notifications / Item",
+      "kind": "set",
+      "variants": 8,
+      "hash": "1dec5cc8",
+      "props": {
+        "Actor": "text:@mariana.souza",
+        "Target": "text:Workspace Exemplo",
+        "Date": "text:Quinta, 14:44",
+        "Time": "text:há 4 horas",
+        "Comment": "text:Ótimo trabalho no relatório! Pode compartilhar como foi feita a análise de tendências?",
+        "Unread": "bool:true",
+        "Type": [
+          "Follow",
+          "Comment",
+          "Reaction",
+          "Invite"
+        ],
+        "State": [
+          "Default",
+          "Hover"
+        ]
+      },
+      "files": [
+        "components/notifications/notification-item.tsx"
+      ]
+    },
+    "stat-item": {
+      "name": "Stat Item",
+      "page": "02 · Molecules",
+      "figmaId": "132:9629",
+      "key": "239f9fcbf387c78146a287ddaded97064881b97e",
+      "path": "Profile & Prompt helpers",
+      "kind": "set",
+      "variants": 2,
+      "hash": "4a0aebd7",
+      "props": {
+        "Value": "text:312",
+        "Label": "bool:false",
+        "Label Text": "text:seguidores",
+        "Icon": "INSTANCE_SWAP",
+        "Size": [
+          "Medium",
+          "Small"
+        ]
+      },
+      "files": [
+        "components/stat-item.tsx"
+      ]
+    },
+    "prompt-suggestion": {
+      "name": "Prompt Suggestion",
+      "page": "02 · Molecules",
+      "figmaId": "132:9640",
+      "key": "c9979a3a544c0a8298af3cba80a22b8dbffc2c51",
+      "path": "Profile & Prompt helpers",
+      "kind": "set",
+      "variants": 2,
+      "hash": "a29cc875",
+      "props": {
+        "Text": "text:Resumir este documento",
+        "State": [
+          "Default",
+          "Hover"
+        ]
+      },
+      "files": [
+        "components/ai/prompt-suggestion.tsx"
+      ]
+    },
+    "model-selector": {
+      "name": "Model Selector",
+      "page": "02 · Molecules",
+      "figmaId": "132:9659",
+      "key": "8f4f22a6fa4441b61c4f61c41da96dadacea715f",
+      "path": "Profile & Prompt helpers",
+      "kind": "set",
+      "variants": 3,
+      "hash": "5818136c",
+      "props": {
+        "Model": "text:Modelo padrão",
+        "Model Icon": "INSTANCE_SWAP",
+        "State": [
+          "Default",
+          "Hover",
+          "Open"
+        ]
+      },
+      "files": [
+        "components/ai/model-selector.tsx"
+      ]
+    },
+    "attachment-chip": {
+      "name": "Attachment Chip",
+      "page": "02 · Molecules",
+      "figmaId": "132:9704",
+      "key": "d4aa2b919a22a4bed1ac0c0827f84e7b4f30c15c",
+      "path": "Profile & Prompt helpers",
+      "kind": "set",
+      "variants": 3,
+      "hash": "47b846e8",
+      "props": {
+        "File Name": "text:documento.pdf",
+        "State": [
+          "Default",
+          "Uploading",
+          "Error"
+        ]
+      },
+      "files": [
+        "components/ai/attachment-chip.tsx"
+      ]
+    },
+    "profile-identity": {
+      "name": "Profile Identity",
+      "page": "02 · Molecules",
+      "figmaId": "132:9717",
+      "key": "99eebf1ab187e70974547a4ebbc8b3cc5840b702",
+      "path": "Profile & Prompt helpers",
+      "kind": "set",
+      "variants": 2,
+      "hash": "43bea2e6",
+      "props": {
+        "Name": "text:Nome Sobrenome",
+        "Bio Text": "text:Descrição curta da pessoa ou da conta, com no máximo duas linhas.",
+        "Bio": "bool:true",
+        "Seal": "bool:true",
+        "Seal swap": "INSTANCE_SWAP",
+        "Size": [
+          "Large",
+          "Small"
+        ]
+      },
+      "files": [
+        "components/profile-identity.tsx"
+      ]
+    },
+    "item": {
+      "name": "Item",
+      "page": "02 · Molecules",
+      "figmaId": "145:10669",
+      "key": "41290ffb3b139337b26d1bd904c6c0ea71f57595",
+      "path": "Base · Moléculas · Agenda e KPIs",
+      "kind": "set",
+      "variants": 6,
+      "hash": "46a0de20",
+      "props": {
+        "Title": "text:Título do item",
+        "Description Text": "text:Descrição do item",
+        "Description": "bool:true",
+        "Media": "bool:true",
+        "Action": "bool:true",
+        "Variant": [
+          "outline",
+          "muted",
+          "dashed"
+        ],
+        "Size": [
+          "default",
+          "sm"
+        ]
+      },
+      "files": [
+        "ui/item.tsx"
+      ]
+    },
+    "stat-card": {
+      "name": "Stat Card",
+      "page": "02 · Molecules",
+      "figmaId": "145:10712",
+      "key": "8f86ad71b9a8ee1a54043d87aae2cdba5375d194",
+      "path": "Base · Moléculas · Agenda e KPIs",
+      "kind": "set",
+      "variants": 3,
+      "hash": "2f657f89",
+      "props": {
+        "Label": "text:Rótulo da métrica",
+        "Value": "text:0",
+        "Delta": "text:+0% desde ontem",
+        "Link": "bool:true",
+        "Chart": "bool:true",
+        "Trend": [
+          "Up",
+          "Down",
+          "Neutral"
+        ]
+      },
+      "files": [
+        "components/stat-card.tsx"
+      ]
+    },
+    "date-picker": {
+      "name": "Date Picker",
+      "page": "03 · Organisms",
+      "figmaId": "74:13579",
+      "key": "01faa052c8f5682d934fb563e6aeba7bfd3af2fb",
+      "path": "Date Picker",
+      "kind": "set",
+      "variants": 2,
+      "hash": "9c068bc0",
+      "props": {
+        "Footer": "bool:true",
+        "Time Filter": "bool:true",
+        "mode": [
+          "single",
+          "range"
+        ]
+      },
+      "files": [
+        "ui/date-picker.tsx",
+        "ui/popover.tsx",
+        "ui/calendar.tsx"
+      ]
+    },
+    "data-table": {
+      "name": "Data Table",
+      "page": "03 · Organisms",
+      "figmaId": "78:17157",
+      "key": "02874e1ff4d2b71d752902257ee40003f4555e96",
+      "path": "Data Table",
+      "kind": "component",
+      "variants": 1,
+      "hash": "4d70fbc1",
+      "props": {
+        "Title": "text:Registros",
+        "Description": "text:Lista de registros com filtros, seleção, ações e paginação.",
+        "Toolbar": "bool:true",
+        "Pagination": "bool:true"
+      },
+      "files": [
+        "ui/data-table.tsx"
+      ]
+    },
+    "table-row": {
+      "name": "Table / Row",
+      "page": "03 · Organisms",
+      "figmaId": "74:13678",
+      "key": "879bad2b29489ac4eaa12923b6df127221a51617",
+      "path": "Table / Row",
+      "kind": "set",
+      "variants": 5,
+      "hash": "438edfa0",
+      "props": {
+        "Type": [
+          "Header",
+          "Body"
+        ],
+        "State": [
+          "Default",
+          "Striped",
+          "Hover",
+          "Selected"
+        ]
+      },
+      "files": [
+        "ui/table.tsx"
+      ]
+    },
+    "prompt-input": {
+      "name": "Prompt Input",
+      "page": "03 · Organisms",
+      "figmaId": "74:13720",
+      "key": "7b7fef8428336d352600bd3c3b60e5ef5e40af79",
+      "path": "Prompt Input",
+      "kind": "set",
+      "variants": 5,
+      "hash": "0b67f2a6",
+      "props": {
+        "Attachments": "bool:false",
+        "Model Selector": "bool:false",
+        "Leading Icon": "bool:true",
+        "Attach": "bool:true",
+        "Suggestions": "bool:true",
+        "Disclaimer": "bool:true",
+        "Placeholder": "text:Envie uma mensagem para a IA…",
+        "Value": "text:Resuma este documento e sugira os próximos passos.",
+        "State": [
+          "Empty",
+          "Focus",
+          "Filled",
+          "Loading",
+          "Disabled"
+        ]
+      },
+      "files": [
+        "ui/prompt-input.tsx"
+      ]
+    },
+    "sidebar": {
+      "name": "Sidebar",
+      "page": "03 · Organisms",
+      "figmaId": "100:11397",
+      "key": "c106e05de7cd43b9f69da3f576ee8a7812488402",
+      "path": "Sidebar",
+      "kind": "set",
+      "variants": 2,
+      "hash": "76df67a6",
+      "props": {
+        "Logo": "INSTANCE_SWAP",
+        "Logo symbol": "INSTANCE_SWAP",
+        "Mode": [
+          "Expanded",
+          "Collapsed"
+        ]
+      },
+      "files": [
+        "ui/sidebar.tsx"
+      ]
+    },
+    "sidebar-team-switcher": {
+      "name": "Sidebar / Team Switcher",
+      "page": "03 · Organisms",
+      "figmaId": "100:11398",
+      "key": "1f97656ccb990cf635c0fe683410df1cec5b3195",
+      "path": "Sidebar",
+      "kind": "component",
+      "variants": 1,
+      "hash": "2401c10d",
+      "props": {},
+      "files": [
+        "components/team-switcher.tsx"
+      ]
+    },
+    "notifications": {
+      "name": "Notifications",
+      "page": "03 · Organisms",
+      "figmaId": "114:12021",
+      "key": "600c0cfc5b7ab4f7886b0e8ceb51072e2b7089f4",
+      "path": "Notifications",
+      "kind": "component",
+      "variants": 1,
+      "hash": "e568e55c",
+      "props": {},
+      "files": [
+        "components/notifications/notifications-panel.tsx",
+        "ui/popover.tsx"
+      ]
+    },
+    "profile-card": {
+      "name": "Profile Card",
+      "page": "03 · Organisms",
+      "figmaId": "133:12209",
+      "key": "01d88781ca94b310597fe530fef30189656132ad",
+      "path": "Profile Card",
+      "kind": "set",
+      "variants": 10,
+      "hash": "ed1e05c4",
+      "props": {
+        "Show Stats": "bool:true",
+        "Show Action": "bool:true",
+        "Layout": [
+          "Vertical",
+          "Horizontal"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Skeleton"
+        ],
+        "Action": [
+          "Follow",
+          "Following"
+        ]
+      },
+      "files": [
+        "components/profile-card.tsx",
+        "ui/skeleton.tsx"
+      ]
+    }
+  }
+}

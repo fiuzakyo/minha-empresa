@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "Figma: Progress",
+  "dependencies": [
+    "radix-ui@^1.4.3",
+    "class-variance-authority@^0.7.1"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/progress.tsx",
+      "content": "/**\n * Progress — Voltron Design System (Figma: 01 · Atoms › Progress)\n *\n * shadcn/ui nativo (Radix) + extensão:\n * - tone: brand | success | warning | error (trilho <tom>/very-soft, indicador na cor do tom)\n * - size: sm (4px) | md (8px)\n * - label: texto acima da barra, com a porcentagem à direita (Figma Label + Label text)\n */\nimport * as React from \"react\"\nimport { Progress as ProgressPrimitive } from \"radix-ui\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst progressVariants = cva(\"relative w-full overflow-hidden rounded-full\", {\n  variants: {\n    tone: {\n      brand: \"bg-accent *:data-[slot=progress-indicator]:bg-primary\",\n      success: \"bg-vt-success-very-soft *:data-[slot=progress-indicator]:bg-success\",\n      warning: \"bg-vt-warning-very-soft *:data-[slot=progress-indicator]:bg-warning\",\n      error: \"bg-vt-error-very-soft *:data-[slot=progress-indicator]:bg-destructive\",\n    },\n    size: {\n      sm: \"h-1\",\n      md: \"h-2\",\n    },\n  },\n  defaultVariants: {\n    tone: \"brand\",\n    size: \"sm\",\n  },\n})\n\nfunction Progress({\n  className,\n  value,\n  tone = \"brand\",\n  size = \"sm\",\n  label,\n  showValue = true,\n  ...props\n}: React.ComponentProps<typeof ProgressPrimitive.Root> &\n  VariantProps<typeof progressVariants> & {\n    /** Texto acima da barra (Figma Label text). */\n    label?: React.ReactNode\n    /** Mostra a porcentagem quando há label. */\n    showValue?: boolean\n  }) {\n  const pct = Math.max(0, Math.min(100, value ?? 0))\n  const bar = (\n    <ProgressPrimitive.Root\n      data-slot=\"progress\"\n      data-tone={tone}\n      value={value}\n      className={cn(progressVariants({ tone, size }), !label && className)}\n      {...props}\n    >\n      <ProgressPrimitive.Indicator\n        data-slot=\"progress-indicator\"\n        className=\"h-full w-full flex-1 rounded-full transition-transform\"\n        style={{ transform: `translateX(-${100 - pct}%)` }}\n      />\n    </ProgressPrimitive.Root>\n  )\n  if (!label) return bar\n  return (\n    <div data-slot=\"progress-field\" className={cn(\"flex w-full flex-col gap-2\", className)}>\n      <div className=\"flex items-center justify-between gap-2 text-sm\">\n        <span className=\"font-medium text-foreground\">{label}</span>\n        {showValue && <span className=\"text-muted-foreground tabular-nums\">{Math.round(pct)}%</span>}\n      </div>\n      {bar}\n    </div>\n  )\n}\n\nexport { Progress, progressVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "description": "Figma: Field / Text Input",
+  "dependencies": [
+    "class-variance-authority@^0.7.1"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/input.tsx",
+      "content": "/**\n * Input — Voltron Design System (base do Figma: 02 · Molecules › Field / Text Input)\n *\n * Caixa de texto simples. Para o campo completo com label flutuante e dica use\n * <FieldTextInput> (field.tsx). Altura por size: md 48 · sm 40 · xs 32 (size/input/*,\n * muda por marca) · raio radius/input.\n * Focus → borda --ring + halo focus/halo · Error → aria-invalid (--destructive) · Disabled → 50%.\n */\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst inputVariants = cva(\n  [\n    \"flex w-full min-w-0 rounded-input border border-input bg-card px-3 text-sm text-foreground outline-none\",\n    \"transition-[border-color,box-shadow] placeholder:text-muted-foreground\",\n    \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-vt-focus-halo\",\n    \"aria-invalid:border-destructive aria-invalid:ring-[3px] aria-invalid:ring-destructive/20\",\n    \"disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n    \"file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground\",\n  ],\n  {\n    variants: {\n      size: {\n        md: \"h-input-md\",\n        sm: \"h-input-sm\",\n        xs: \"h-input-xs\",\n      },\n    },\n    defaultVariants: { size: \"md\" },\n  }\n)\n\nfunction Input({\n  className,\n  type,\n  size = \"md\",\n  ...props\n}: Omit<React.ComponentProps<\"input\">, \"size\"> & VariantProps<typeof inputVariants>) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      data-size={size}\n      className={cn(inputVariants({ size }), className)}\n      {...props}\n    />\n  )\n}\n\nexport { Input, inputVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

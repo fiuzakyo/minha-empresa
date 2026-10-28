@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag",
+  "title": "Tag",
+  "description": "Figma: Tag",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/tag.tsx",
+      "content": "/**\n * Tag — Voltron Design System (Figma: 01 · Atoms › Tag)\n *\n * Etiqueta interativa (filtros, multisseleção): Badge + botão de remover (X).\n * Diferente do Badge, que é só leitura.\n * - tone: neutral | brand | success | warning | error\n * - size: sm (24px, texto xs) | md (32px, texto base)\n * - icon: ícone à esquerda (Figma Leading + Icon) · onRemove: mostra o X (Figma Removable)\n * Acessibilidade: success e warning mantêm o texto em --foreground; a cor vai na borda e no fundo.\n */\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { XIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst tagVariants = cva(\n  [\n    \"inline-flex w-fit shrink-0 items-center gap-2 whitespace-nowrap rounded-control border px-2 font-medium\",\n    \"transition-[border-color,box-shadow] outline-none has-[button:focus-visible]:ring-[3px] has-[button:focus-visible]:ring-ring/50 focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n    \"aria-disabled:pointer-events-none aria-disabled:opacity-50\",\n    \"[&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  ],\n  {\n    variants: {\n      tone: {\n        neutral: \"border-border bg-background text-foreground hover:border-input\",\n        brand: \"border-vt-primary-medium bg-accent text-vt-primary-strong hover:border-primary\",\n        success: \"border-vt-success-medium bg-vt-success-very-soft text-foreground hover:border-success\",\n        warning: \"border-vt-warning-medium bg-vt-warning-very-soft text-foreground hover:border-warning\",\n        error: \"border-vt-error-medium bg-vt-error-very-soft text-vt-error-strong hover:border-destructive\",\n      },\n      size: {\n        sm: \"h-6 text-xs [&_svg]:size-3\",\n        md: \"h-8 text-base [&_svg]:size-3.5\",\n      },\n    },\n    defaultVariants: {\n      tone: \"neutral\",\n      size: \"sm\",\n    },\n  }\n)\n\nfunction Tag({\n  className,\n  tone = \"neutral\",\n  size = \"sm\",\n  icon,\n  onRemove,\n  removeLabel = \"Remover\",\n  disabled = false,\n  children,\n  ...props\n}: React.ComponentProps<\"span\"> &\n  VariantProps<typeof tagVariants> & {\n    icon?: React.ReactNode\n    /** Mostra o botão X e é chamado ao clicar nele. */\n    onRemove?: () => void\n    removeLabel?: string\n    disabled?: boolean\n  }) {\n  return (\n    <span\n      data-slot=\"tag\"\n      data-tone={tone}\n      data-size={size}\n      aria-disabled={disabled || undefined}\n      className={cn(tagVariants({ tone, size }), className)}\n      {...props}\n    >\n      {icon}\n      {children}\n      {onRemove && (\n        <button\n          type=\"button\"\n          data-slot=\"tag-remove\"\n          aria-label={removeLabel}\n          disabled={disabled}\n          onClick={onRemove}\n          className=\"-me-0.5 inline-flex cursor-pointer items-center justify-center rounded-sm opacity-70 outline-none hover:opacity-100\"\n        >\n          <XIcon aria-hidden=\"true\" />\n        </button>\n      )}\n    </span>\n  )\n}\n\nexport { Tag, tagVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

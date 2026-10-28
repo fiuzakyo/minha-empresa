@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "key-icon",
+  "title": "Key Icon",
+  "description": "Figma: Key Icon",
+  "dependencies": [
+    "class-variance-authority@^0.7.1"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/key-icon.tsx",
+      "content": "/**\n * Key Icon — Voltron Design System (Figma: 01 · Atoms › Key Icon)\n *\n * Ícone em destaque: contêiner + ícone Phosphor (cards de recurso, estados vazios, benefícios).\n * - tone:    neutral | brand | success | warning | error\n * - variant: subtle (tinta + ícone colorido) | solid (fundo cheio)   — Figma Style\n * - size:    sm 32 · md 40 · lg 48 · xl 64 (ícone 16 · 20 · 24 · 32)\n */\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst keyIconVariants = cva(\n  \"inline-flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    variants: {\n      tone: {\n        neutral: \"\",\n        brand: \"\",\n        success: \"\",\n        warning: \"\",\n        error: \"\",\n      },\n      variant: {\n        subtle: \"\",\n        solid: \"\",\n      },\n      size: {\n        sm: \"size-8 rounded-md [&_svg]:size-4\",\n        md: \"size-10 rounded-lg [&_svg]:size-5\",\n        lg: \"size-12 rounded-xl [&_svg]:size-6\",\n        xl: \"size-16 rounded-2xl [&_svg]:size-8\",\n      },\n    },\n    compoundVariants: [\n      { variant: \"subtle\", tone: \"neutral\", className: \"bg-background text-foreground\" },\n      { variant: \"subtle\", tone: \"brand\", className: \"bg-accent text-primary\" },\n      { variant: \"subtle\", tone: \"success\", className: \"bg-vt-success-very-soft text-vt-success-base\" },\n      { variant: \"subtle\", tone: \"warning\", className: \"bg-vt-warning-very-soft text-vt-warning-base\" },\n      { variant: \"subtle\", tone: \"error\", className: \"bg-vt-error-very-soft text-vt-error-base\" },\n      { variant: \"solid\", tone: \"neutral\", className: \"bg-foreground text-background\" },\n      { variant: \"solid\", tone: \"brand\", className: \"bg-primary text-primary-foreground\" },\n      { variant: \"solid\", tone: \"success\", className: \"bg-success text-success-foreground\" },\n      { variant: \"solid\", tone: \"warning\", className: \"bg-warning text-warning-foreground\" },\n      { variant: \"solid\", tone: \"error\", className: \"bg-destructive text-primary-foreground\" },\n    ],\n    defaultVariants: {\n      tone: \"neutral\",\n      variant: \"subtle\",\n      size: \"sm\",\n    },\n  }\n)\n\nfunction KeyIcon({\n  className,\n  tone = \"neutral\",\n  variant = \"subtle\",\n  size = \"sm\",\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof keyIconVariants>) {\n  return (\n    <span\n      data-slot=\"key-icon\"\n      data-tone={tone}\n      data-variant={variant}\n      data-size={size}\n      aria-hidden={props[\"aria-label\"] ? undefined : true}\n      className={cn(keyIconVariants({ tone, variant, size }), className)}\n      {...props}\n    />\n  )\n}\n\nexport { KeyIcon, keyIconVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

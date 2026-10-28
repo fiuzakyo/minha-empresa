@@ -1,0 +1,12 @@
+/* @futuredata/ui-tailwind — no CSS global do app (Tailwind CSS v4):
+ *
+ *   @import "tailwindcss";
+ *   @import "@futuredata/ui-tailwind/styles.css";
+ *
+ * Traz os tokens (todas as marcas, claro/escuro), o tema do Tailwind e faz o
+ * Tailwind gerar as classes usadas pelos componentes do pacote.
+ */
+@import "tw-animate-css";
+@import "@futuredata/tokens/voltron.css";
+@import "@futuredata/tokens/tailwind.css";
+@source "./dist";

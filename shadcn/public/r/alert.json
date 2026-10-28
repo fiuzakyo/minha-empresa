@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "title": "Alert / Banner",
+  "description": "Figma: Alert / Banner",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/alert.tsx",
+      "content": "/**\n * Alert / Banner — Voltron Design System (Figma: 02 · Molecules › Alert / Banner)\n *\n * shadcn/ui Alert + extensão Voltron: aviso persistente na largura da página.\n * - status: error (nativo destructive) | warning | success | information | feature\n * - Texto e ícones num tom de contraste por status (≥ 4,5:1 nos dois modos)\n * - Layout em linha: ícone · título · descrição · link, centralizados; dismiss à direita\n */\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { CheckCircleIcon, InfoIcon, SparkleIcon, WarningCircleIcon, WarningIcon, XIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst alertVariants = cva(\n  \"flex w-full items-center gap-2 rounded-alert px-4 py-2.5 text-sm [&_svg]:size-5 [&_svg]:shrink-0\",\n  {\n    variants: {\n      status: {\n        error: \"bg-vt-error-very-soft text-vt-error-maximum\",\n        warning: \"bg-vt-warning-very-soft text-warning-foreground\",\n        success: \"bg-vt-success-very-soft text-success-foreground\",\n        information: \"bg-vt-information-very-soft text-vt-information-maximum\",\n        feature: \"bg-accent text-vt-primary-strong\",\n      },\n    },\n    defaultVariants: { status: \"information\" },\n  }\n)\n\nconst statusIcon = {\n  error: WarningCircleIcon,\n  warning: WarningIcon,\n  success: CheckCircleIcon,\n  information: InfoIcon,\n  feature: SparkleIcon,\n} as const\n\nfunction Alert({\n  className,\n  status = \"information\",\n  title,\n  icon = true,\n  action,\n  onDismiss,\n  dismissLabel = \"Fechar\",\n  children,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"title\"> &\n  VariantProps<typeof alertVariants> & {\n    title?: React.ReactNode\n    /** true usa o ícone padrão do status; false esconde (Figma Left Icon). */\n    icon?: boolean | React.ReactNode\n    /** Link de ação ao final (Figma Link Button). */\n    action?: React.ReactNode\n    onDismiss?: () => void\n    dismissLabel?: string\n  }) {\n  const Icon = statusIcon[status ?? \"information\"]\n  return (\n    <div\n      data-slot=\"alert\"\n      data-status={status}\n      role={status === \"error\" || status === \"warning\" ? \"alert\" : \"status\"}\n      className={cn(alertVariants({ status }), className)}\n      {...props}\n    >\n      {onDismiss && <span aria-hidden=\"true\" className=\"w-4 shrink-0\" />}\n      <div className=\"flex min-w-0 flex-1 flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center\">\n        {icon === true ? <Icon aria-hidden=\"true\" /> : icon || null}\n        {title && <span data-slot=\"alert-title\" className=\"font-semibold\">{title}</span>}\n        {title && children && <span aria-hidden=\"true\">·</span>}\n        {children && <span data-slot=\"alert-description\">{children}</span>}\n        {action && (\n          <span data-slot=\"alert-action\" className=\"font-medium underline underline-offset-4\">\n            {action}\n          </span>\n        )}\n      </div>\n      {onDismiss && (\n        <button\n          type=\"button\"\n          aria-label={dismissLabel}\n          onClick={onDismiss}\n          className=\"inline-flex cursor-pointer rounded-sm opacity-80 outline-none hover:opacity-100 focus-visible:ring-[3px] focus-visible:ring-ring/50\"\n        >\n          <XIcon />\n        </button>\n      )}\n    </div>\n  )\n}\n\nexport { Alert, alertVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

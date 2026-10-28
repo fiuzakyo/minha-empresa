@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag-input",
+  "title": "Tag Input",
+  "description": "Figma: Field / Tag Input",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme",
+    "@futuredata/tag"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/tag-input.tsx",
+      "content": "/**\n * Tag Input — Voltron Design System (Figma: 02 · Molecules › Field / Tag Input)\n *\n * Composição (o shadcn não tem Tag Input nativo): Tags md removíveis dentro do campo,\n * input para adicionar (Enter ou vírgula) e botão limpar tudo (X).\n * Contêiner radius/lg (sm/xs: radius/md), padding 8/10, --card, Elevation/shadow-xs.\n */\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { XIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Tag } from \"@/registry/futuredata/ui/tag\"\n\nconst tagInputVariants = cva(\n  [\n    \"flex w-full flex-wrap items-center gap-1 border border-input bg-card ps-2 pe-2.5 shadow-xs\",\n    \"transition-[background-color,border-color,box-shadow] hover:bg-background\",\n    \"focus-within:border-vt-focus-halo focus-within:shadow-none focus-within:ring-[3px] focus-within:ring-vt-focus-halo\",\n    \"has-[input[aria-invalid=true]]:border-destructive has-[input[aria-invalid=true]]:shadow-none\",\n    \"has-[input:disabled]:border-transparent has-[input:disabled]:bg-background has-[input:disabled]:shadow-none\",\n  ],\n  {\n    variants: {\n      size: {\n        md: \"min-h-15 rounded-lg py-2\",\n        sm: \"min-h-14 rounded-md py-1.5\",\n        xs: \"min-h-13 rounded-md py-1\",\n      },\n    },\n    defaultVariants: { size: \"md\" },\n  }\n)\n\nfunction TagInput({\n  className,\n  size = \"md\",\n  value: valueProp,\n  defaultValue = [],\n  onValueChange,\n  placeholder = \"Adicionar…\",\n  clearable = true,\n  clearLabel = \"Limpar tudo\",\n  disabled,\n  ...props\n}: Omit<React.ComponentProps<\"input\">, \"size\" | \"value\" | \"defaultValue\"> &\n  VariantProps<typeof tagInputVariants> & {\n    value?: string[]\n    defaultValue?: string[]\n    onValueChange?: (value: string[]) => void\n    /** Botão X que limpa todas as tags (Figma Right Icon). */\n    clearable?: boolean\n    clearLabel?: string\n  }) {\n  const [inner, setInner] = React.useState(defaultValue)\n  const [draft, setDraft] = React.useState(\"\")\n  const tags = valueProp ?? inner\n  const set = (next: string[]) => {\n    if (valueProp === undefined) setInner(next)\n    onValueChange?.(next)\n  }\n  const add = (raw: string) => {\n    const t = raw.trim()\n    if (t && !tags.includes(t)) set([...tags, t])\n    setDraft(\"\")\n  }\n  return (\n    <div data-slot=\"tag-input\" data-size={size} className={cn(tagInputVariants({ size }), className)}>\n      {tags.map((t) => (\n        <Tag key={t} size=\"md\" disabled={disabled} onRemove={() => set(tags.filter((x) => x !== t))} removeLabel={`Remover ${t}`}>\n          {t}\n        </Tag>\n      ))}\n      <input\n        value={draft}\n        placeholder={placeholder}\n        disabled={disabled}\n        onChange={(e) => setDraft(e.target.value)}\n        onKeyDown={(e) => {\n          if (e.key === \"Enter\" || e.key === \",\") {\n            e.preventDefault()\n            add(draft)\n          } else if (e.key === \"Backspace\" && !draft && tags.length) {\n            set(tags.slice(0, -1))\n          }\n        }}\n        onBlur={() => draft && add(draft)}\n        className=\"min-w-20 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground disabled:placeholder:text-vt-text-disabled\"\n        {...props}\n      />\n      {clearable && tags.length > 0 && (\n        <button\n          type=\"button\"\n          aria-label={clearLabel}\n          disabled={disabled}\n          onClick={() => set([])}\n          className=\"ms-auto inline-flex cursor-pointer rounded-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none\"\n        >\n          <XIcon className=\"size-5\" />\n        </button>\n      )}\n    </div>\n  )\n}\n\nexport { TagInput, tagInputVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

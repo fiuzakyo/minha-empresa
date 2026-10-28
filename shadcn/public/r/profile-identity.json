@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile-identity",
+  "title": "Profile Identity",
+  "description": "Figma: Profile Identity",
+  "dependencies": [
+    "@phosphor-icons/react@^2.1.10"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/components/profile-identity.tsx",
+      "content": "/**\n * Profile Identity — Voltron Design System (Figma: 02 · Molecules › Profile Identity)\n * Nome (Bold xl/base) + selo opcional (SealCheck em primary/strong, trocável) + bio (2 linhas).\n * size: lg | sm.\n */\nimport * as React from \"react\"\nimport { SealCheckIcon } from \"@phosphor-icons/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction ProfileIdentity({\n  name,\n  bio,\n  seal = true,\n  size = \"lg\",\n  className,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"children\"> & {\n  name: React.ReactNode\n  bio?: React.ReactNode\n  /** true usa SealCheck; passe outro ícone para trocar (ex.: selo do produto); false esconde. */\n  seal?: boolean | React.ReactNode\n  size?: \"lg\" | \"sm\"\n}) {\n  return (\n    <div data-slot=\"profile-identity\" data-size={size} className={cn(\"flex flex-col\", size === \"lg\" ? \"gap-2\" : \"gap-1\", className)} {...props}>\n      <div className=\"flex items-center gap-1.5\">\n        <span className={cn(\"text-foreground\", size === \"lg\" ? \"vt-text-bold-xl\" : \"vt-text-bold-base\")}>{name}</span>\n        {seal && (\n          <span className={cn(\"text-vt-primary-strong [&_svg]:shrink-0\", size === \"lg\" ? \"[&_svg]:size-5\" : \"[&_svg]:size-4\")}>\n            {seal === true ? <SealCheckIcon weight=\"fill\" aria-label=\"Verificado\" /> : seal}\n          </span>\n        )}\n      </div>\n      {bio && <p className={cn(\"line-clamp-2 text-muted-foreground\", size === \"lg\" ? \"text-sm\" : \"text-xs\")}>{bio}</p>}\n    </div>\n  )\n}\n\nexport { ProfileIdentity }\n",
+      "type": "registry:component",
+      "target": "components/profile-identity.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

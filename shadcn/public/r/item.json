@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item",
+  "title": "Item",
+  "description": "Figma: Item",
+  "dependencies": [
+    "radix-ui@^1.4.3",
+    "class-variance-authority@^0.7.1"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/item.tsx",
+      "content": "/**\n * Item — Voltron Design System (Figma: 02 · Molecules › Item)\n *\n * shadcn/ui Item + extensão Voltron:\n * - variant: outline (--card + --border) | muted (--muted) | dashed (borda tracejada, só a ação — espaço vazio)\n * - size: default (p 12, gap 12, mídia 32) | sm (py 8, gap 10, mídia 24)\n * Partes: ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions. Raio radius/card.\n */\nimport * as React from \"react\"\nimport { Slot } from \"radix-ui\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst itemVariants = cva(\n  \"group/item flex w-full items-center rounded-card border text-sm outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-ring/50 [a]:hover:bg-muted\",\n  {\n    variants: {\n      variant: {\n        outline: \"border-border bg-card\",\n        muted: \"border-transparent bg-muted\",\n        dashed: \"justify-center border-dashed border-border bg-muted\",\n      },\n      size: {\n        default: \"gap-3 p-3\",\n        sm: \"gap-2.5 px-3 py-2\",\n      },\n    },\n    defaultVariants: { variant: \"outline\", size: \"default\" },\n  }\n)\n\nfunction Item({\n  className,\n  variant = \"outline\",\n  size = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof itemVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"div\"\n  return (\n    <Comp\n      data-slot=\"item\"\n      data-variant={variant}\n      data-size={size}\n      className={cn(itemVariants({ variant, size }), className)}\n      {...props}\n    />\n  )\n}\n\nfunction ItemMedia({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"item-media\"\n      className={cn(\"flex shrink-0 items-center justify-center group-data-[size=sm]/item:[&_[data-slot=avatar]]:size-6\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction ItemContent({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"item-content\" className={cn(\"flex min-w-0 flex-1 flex-col gap-0.5\", className)} {...props} />\n}\n\nfunction ItemTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"item-title\" className={cn(\"truncate text-sm font-medium text-foreground\", className)} {...props} />\n}\n\nfunction ItemDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n  return <p data-slot=\"item-description\" className={cn(\"line-clamp-2 text-xs text-muted-foreground\", className)} {...props} />\n}\n\nfunction ItemActions({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"item-actions\" className={cn(\"flex items-center gap-2\", className)} {...props} />\n}\n\nfunction ItemGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div role=\"list\" data-slot=\"item-group\" className={cn(\"flex flex-col gap-2\", className)} {...props} />\n}\n\nexport { Item, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemGroup, itemVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

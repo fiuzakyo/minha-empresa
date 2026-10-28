@@ -1,0 +1,57 @@
+/* Fonte do CSS de @futuredata/ui-react (compilado para dist/styles.css).
+ * Tailwind v4 com prefixo "fd:" — o app NÃO precisa de Tailwind e as classes não colidem com as dele.
+ * Sem o preflight global do Tailwind: só um reset mínimo dentro dos componentes ([data-slot]). */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(fd);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "tw-animate-css";
+@import "../../tokens/dist/voltron.css";
+@import "../../tokens/dist/tailwind.css";
+@source "../.generated";
+
+@layer base {
+  :where([data-slot]),
+  :where([data-slot]) *,
+  :where([data-slot]) ::before,
+  :where([data-slot]) ::after {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+  }
+  :where([data-slot]) :is(button, input, select, textarea),
+  :where(button[data-slot], input[data-slot], textarea[data-slot]) {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    background-color: transparent;
+    border-radius: 0;
+    appearance: none;
+  }
+  :where([data-slot]) :is(ol, ul) {
+    list-style: none;
+  }
+  :where([data-slot]) :is(h1, h2, h3, h4, h5, h6) {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  :where([data-slot]) :is(img, svg, video) {
+    display: block;
+    vertical-align: middle;
+  }
+  :where([data-slot]) img {
+    max-width: 100%;
+    height: auto;
+  }
+  :where([data-slot]) a,
+  :where(a[data-slot]) {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  :where([data-slot]) :is(button, [role="button"]) {
+    cursor: pointer;
+  }
+  :where([data-slot]) :disabled {
+    cursor: default;
+  }
+}

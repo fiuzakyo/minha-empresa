@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "Figma: Button",
+  "dependencies": [
+    "radix-ui@^1.4.3",
+    "class-variance-authority@^0.7.1"
+  ],
+  "registryDependencies": [
+    "@futuredata/theme"
+  ],
+  "files": [
+    {
+      "path": "registry/futuredata/ui/button.tsx",
+      "content": "/**\n * Button — Voltron Design System (Figma: 01 · Atoms › Button)\n *\n * shadcn/ui nativo + extensão Voltron (`soft`).\n * - variant: default | secondary | ghost | destructive | link | outline | soft\n * - size:    sm | default | lg | icon-xs | icon-sm | icon | icon-lg\n *   (altura vem de size/button/* e muda por marca: Verax é mais alta)\n * - State (Figma) → estados CSS: hover, focus-visible, disabled\n * - Ícones Phosphor 20px (size-5). Ao lado do texto, marque com\n *   data-icon=\"inline-start\" | \"inline-end\" (ficam com 60% de opacidade, como no Figma).\n */\nimport * as React from \"react\"\nimport { Slot } from \"radix-ui\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst buttonVariants = cva(\n  [\n    \"relative inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-button font-medium\",\n    \"transition-[color,background-color,border-color,box-shadow,opacity] outline-none\",\n    \"focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n    \"disabled:pointer-events-none disabled:shadow-none\",\n    \"aria-invalid:ring-[3px] aria-invalid:ring-destructive/20\",\n    \"[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5\",\n    \"[&>[data-icon=inline-start]]:opacity-60 [&>[data-icon=inline-end]]:opacity-60\",\n  ],\n  {\n    variants: {\n      variant: {\n        default:\n          \"bg-primary text-primary-foreground shadow-brand-md hover:bg-primary/90 disabled:opacity-20\",\n        secondary:\n          \"bg-vt-secondary-emphasis text-secondary-foreground shadow-secondary-md hover:bg-vt-secondary-strong/80 focus-visible:bg-vt-secondary-strong focus-visible:ring-chart-2/50 disabled:bg-secondary disabled:opacity-20\",\n        ghost: \"text-foreground hover:bg-accent disabled:opacity-50\",\n        destructive:\n          \"bg-destructive text-primary-foreground shadow-error-md hover:bg-destructive/90 focus-visible:ring-destructive/20 disabled:opacity-50\",\n        link: \"text-primary underline-offset-4 hover:underline disabled:opacity-50\",\n        outline:\n          \"border border-input bg-card text-foreground hover:bg-background disabled:opacity-50\",\n        soft: \"bg-vt-primary-very-soft text-vt-primary-strong hover:bg-vt-primary-soft disabled:opacity-50\",\n      },\n      size: {\n        sm: \"h-button-sm gap-1.5 px-3 text-sm has-[>[data-icon=inline-start]]:ps-2.5 has-[>[data-icon=inline-end]]:pe-2.5\",\n        default:\n          \"h-button-default gap-2 px-4 text-base has-[>[data-icon=inline-start]]:ps-3 has-[>[data-icon=inline-end]]:pe-3\",\n        lg: \"h-button-lg gap-2 px-6 text-base has-[>[data-icon=inline-start]]:ps-4 has-[>[data-icon=inline-end]]:pe-4\",\n        \"icon-xs\": \"size-button-icon-xs [&_svg:not([class*='size-'])]:size-4\",\n        \"icon-sm\": \"size-button-icon-sm\",\n        icon: \"size-button-icon\",\n        \"icon-lg\": \"size-button-icon-lg\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      data-variant={variant}\n      data-size={size}\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
